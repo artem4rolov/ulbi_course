@@ -1,0 +1,53 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add typescript@4.5.5 ts-loader@9.2.6
+
+PATH: 
+  C:\Users\Artem\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Artem\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Users\Artem\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\dotnet;C:\Users\Artem\AppData\Local\Microsoft\WindowsApps;C:\Users\Artem\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Artem\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.4.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: npm.kraud.ru/html-webpack-plugin: Invalid URI "npm.kraud.ru/html-webpack-plugin"
+      at module.exports.Request.init (C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:140978:31)
+      at new Request (C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:140832:8)
+      at request (C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:137738:10)
+      at RequestManager.execute (C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:66197:15)
+      at RequestManager.shiftQueue (C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:66235:10)
+      at C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:65905:13
+      at new Promise (<anonymous>)
+      at new F (C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:5305:28)
+      at RequestManager.request (C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:65903:19)
+      at NpmRegistry.<anonymous> (C:\Users\Artem\AppData\Roaming\nvm\v20.4.0\node_modules\yarn\lib\cli.js:31751:42)
+
+npm manifest: 
+  {
+    "name": "module_1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "webpack"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "html-webpack-plugin": "^5.5.3",
+      "progress-webpack-plugin": "^1.0.16",
+      "webpack": "^5.69.1",
+      "webpack-cli": "^4.9.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
