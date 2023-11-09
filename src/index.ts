@@ -1,3 +1,3 @@
 import testFunc from "./test";
 
-testFunc("test func");
+testFunc("test func ddddddddddddddddd");

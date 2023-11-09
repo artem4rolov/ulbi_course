@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("test func ёопта"),console.log("test func ddddddddddddddddd")})();
