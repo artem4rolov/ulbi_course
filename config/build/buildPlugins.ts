@@ -1,4 +1,5 @@
 import HTMLWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { ProgressPlugin, WebpackPluginInstance } from "webpack";
 
 export function buildPlugins(htmlPath: string): WebpackPluginInstance[] {
@@ -7,5 +8,6 @@ export function buildPlugins(htmlPath: string): WebpackPluginInstance[] {
       template: htmlPath,
     }),
     new ProgressPlugin(),
+    new MiniCssExtractPlugin(),
   ];
 }
