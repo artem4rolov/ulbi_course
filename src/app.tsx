@@ -1,10 +1,10 @@
-import { Suspense, lazy, useContext, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import { Link } from "react-router-dom";
-import MainPage from "./pages/main-page/main-page";
+import { Suspense, lazy } from "react";
+import { useTheme } from "./hooks";
+import { classNames } from "./helpers/classNames";
 
 import "./styles/index.scss";
-import { useTheme } from "./hooks";
+import { Link, Route, Routes } from "react-router-dom";
+import MainPage from "./pages/main-page/main-page";
 
 const AboutPageAsync = lazy(() => import("./pages/about-page/about-page"));
 const CounterAsync = lazy(() => import("./components/counter/counter"));
@@ -13,7 +13,13 @@ export const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div
+      className={classNames("app", { selectable: true, hovered: false }, [
+        theme,
+        "top-2",
+        "left-5",
+      ])}
+    >
       <Suspense fallback={<>Loading...</>}>
         <Link to="/counter">Счетчик</Link>
         <Link to="/about">О нас</Link>
