@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
-import { ThemeContext } from "./theme-context";
-import { Theme, ThemeContextProviderProps } from "./theme-context.types";
-import { LOCAL_STORAGE_THEME_KEY } from "../../constants";
+
+import { ThemeContext } from "../lib/theme-context";
+import { Theme, ThemeContextProviderProps } from "../theme-context.types";
+import { LOCAL_STORAGE_THEME_KEY } from "shared/constants";
 
 export const ThemeContextProvider: FC<ThemeContextProviderProps> = ({
   children,

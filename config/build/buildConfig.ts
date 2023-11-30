@@ -15,9 +15,9 @@ export default function buildConfig(options: BuildOptions) {
       path: paths.output,
       clean: true,
     },
-    plugins: buildPlugins(paths.html),
-    module: buildLoaders(isDev),
-    resolve: buildResolves(),
+    plugins: buildPlugins(options),
+    module: buildLoaders(options),
+    resolve: buildResolves(options),
     devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? devServer({ port: 3000, open: true }) : undefined,
   };

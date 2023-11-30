@@ -2,14 +2,14 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { RuleSetRule } from "webpack";
 import { BuildOptions } from "./types";
 
-export function buildLoaders(isDev: boolean): RuleSetRule {
+export function buildLoaders(options: BuildOptions): RuleSetRule {
   const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
       // style-loader Creates `style` nodes from JS strings
       // в дев мы не отделяем css от js
       // в проде мы отделяем стили отдельно от js
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
       // Translates CSS into CommonJS
       {
         loader: "css-loader",
@@ -20,7 +20,7 @@ export function buildLoaders(isDev: boolean): RuleSetRule {
               Boolean(resourcePath.includes(".module.")),
             // в деве генерим имена понятные для стилей
             // в проде генерем хэш-имена для стилей
-            localIdentName: isDev
+            localIdentName: options.isDev
               ? "[path][name]__[local]--[hash:base64:5]"
               : "[hash:base64:8]",
           },
