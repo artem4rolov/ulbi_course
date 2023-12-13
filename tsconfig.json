@@ -34,6 +34,7 @@
     "allowSyntheticDefaultImports": true
   },
   "ts-node": {
+    // когда в "module" будет ESNext или ES2022 и выше, необходимо добавить это
     "compilerOptions": {
       "module": "CommonJS"
     }
