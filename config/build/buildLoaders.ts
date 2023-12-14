@@ -3,6 +3,33 @@ import { RuleSetRule } from "webpack";
 import { BuildOptions } from "./types";
 
 export function buildLoaders(options: BuildOptions): RuleSetRule {
+  const svgLoader = {
+    test: /\.svg$/,
+    issuer: {
+      and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+    },
+    use: [
+      {
+        loader: "@svgr/webpack",
+        options: {
+          prettier: false,
+          svgo: false,
+          svgoConfig: {
+            plugins: [{ removeViewBox: false }],
+          },
+          titleProp: true,
+          ref: true,
+        },
+      },
+      // {
+      //   loader: "file-loader",
+      //   options: {
+      //     name: "static/media/[name].[hash].[ext]",
+      //   },
+      // },
+    ],
+  };
+
   const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -38,6 +65,6 @@ export function buildLoaders(options: BuildOptions): RuleSetRule {
   };
 
   return {
-    rules: [sassLoader, typeScriptLoader],
+    rules: [svgLoader, sassLoader, typeScriptLoader],
   };
 }

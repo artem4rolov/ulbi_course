@@ -1,6 +1,6 @@
 import './[FTName].module.scss';
 
-interface <FTName | capitalize>Props {}
+interface <FTName | kebabcase>Props {}
 
 export const <FTName | capitalize> = (props: <FTName | capitalize>Props) => {
   return <div></div>;
