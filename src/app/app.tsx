@@ -2,7 +2,7 @@ import "./styles/index.scss";
 import { useTheme } from "shared/hooks";
 import { classNames } from "shared/helpers";
 import { Router } from "./context/router/router";
-import { Navbar } from "widgets";
+import { Navbar, Sidebar } from "widgets";
 
 export const App = () => {
   const { theme } = useTheme();
@@ -16,7 +16,10 @@ export const App = () => {
       ])}
     >
       <Navbar />
-      <Router />
+      <div className={"app-content"}>
+        <Sidebar />
+        <Router />
+      </div>
     </div>
   );
 };
