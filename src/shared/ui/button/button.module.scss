@@ -6,14 +6,41 @@
   background: transparent;
   border: 1px solid black;
   border-radius: 8px;
+  padding: 5px 10px;
+
+  &:active {
+    border: 1px solid gray;
+  }
+
+  &:hover {
+    border: 1px solid rgb(70, 70, 70);
+  }
 }
 .solid {
   background: green;
   color: white;
-  border: 1px solid white;
   border-radius: 8px;
+  padding: 5px 10px;
+
+  &:active {
+    background: greenyellow;
+  }
+
+  &:hover {
+    background: rgb(22, 110, 22);
+  }
 }
+
 .link {
   background: transparent;
   border: none;
+  color: var(--primary-color);
+
+  &:active {
+    border-bottom: 1px solid blue;
+  }
+
+  &:hover {
+    border-bottom: 1px solid blue;
+  }
 }

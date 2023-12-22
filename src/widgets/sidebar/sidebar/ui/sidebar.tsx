@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { classNames, ThemeSwitcher } from "shared";
+import { classNames, LangSwitcher, ThemeSwitcher } from "shared";
 import styles from "./sidebar.module.scss";
 
 interface SidebarProps {
@@ -18,6 +18,7 @@ export const Sidebar = (props: SidebarProps) => {
     >
       <button onClick={() => setCollapsed((prev) => !prev)}>collapse</button>
       <ThemeSwitcher />
+      <LangSwitcher />
     </div>
   );
 };
