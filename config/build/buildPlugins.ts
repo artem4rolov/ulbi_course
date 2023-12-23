@@ -1,6 +1,6 @@
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { ProgressPlugin, WebpackPluginInstance } from "webpack";
+import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from "webpack";
 import { BuildOptions } from "./types";
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
@@ -10,5 +10,8 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     }),
     new ProgressPlugin(),
     new MiniCssExtractPlugin(),
+    new DefinePlugin({
+      __IS_DEV__: options.isDev,
+    }),
   ];
 }

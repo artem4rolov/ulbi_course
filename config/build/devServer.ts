@@ -8,5 +8,6 @@ export function devServer(
     port,
     open,
     historyApiFallback: true,
+    hot: true,
   };
 }

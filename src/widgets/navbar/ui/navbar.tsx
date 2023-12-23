@@ -17,10 +17,10 @@ export const Navbar = (props: NavbarProps) => {
       <div>logo</div>
       <div className={classNames(styles["navbar-links"])}>
         <AppLink theme={AppLinkTheme.PRIMARY} to="/about">
-          {t("navLinkMainPage")}
+          {t("navLinkAboutUsPage")}
         </AppLink>
         <AppLink theme={AppLinkTheme.PRIMARY} to="/">
-          {t("navLinkAboutUsPage")}
+          {t("navLinkMainPage")}
         </AppLink>
       </div>
     </div>
