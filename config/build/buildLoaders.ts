@@ -58,6 +58,26 @@ export function buildLoaders(options: BuildOptions): RuleSetRule {
     ],
   };
 
+  const babelLoader = {
+    test: /\.(ts|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              locales: ["en", "ru"],
+              keyAsDefaultValue: true,
+            },
+          ],
+        ],
+      },
+    },
+  };
+
   const typeScriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
@@ -65,6 +85,6 @@ export function buildLoaders(options: BuildOptions): RuleSetRule {
   };
 
   return {
-    rules: [svgLoader, sassLoader, typeScriptLoader],
+    rules: [svgLoader, sassLoader, babelLoader, typeScriptLoader],
   };
 }
