@@ -1,10 +1,10 @@
-import { FC } from "react";
-import { classNames } from "shared/helpers";
-import { ButtonProps, ButtonTheme } from "./button.types";
-import styles from "./button.module.scss";
+import { type FC } from 'react'
+import { classNames } from 'shared/helpers'
+import { type ButtonProps, ButtonTheme } from './button.types'
+import styles from './button.module.scss'
 
 export const Button: FC<ButtonProps> = (props) => {
-  const { className, theme = ButtonTheme.SOLID, children, onClick } = props;
+  const { className, theme = ButtonTheme.SOLID, children, onClick } = props
 
   return (
     <button
@@ -13,5 +13,5 @@ export const Button: FC<ButtonProps> = (props) => {
     >
       {children}
     </button>
-  );
-};
+  )
+}

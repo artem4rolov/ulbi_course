@@ -1,9 +1,9 @@
-import { createContext, Dispatch, SetStateAction } from "react";
-import { Theme } from "../theme-context.types";
+import { createContext, type Dispatch, type SetStateAction } from 'react'
+import { type Theme } from '../theme-context.types'
 
 interface ThemeContextProps {
-  theme?: Theme;
-  setTheme?: Dispatch<SetStateAction<Theme>>;
+  theme?: Theme
+  setTheme?: Dispatch<SetStateAction<Theme>>
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({});
+export const ThemeContext = createContext<ThemeContextProps>({})

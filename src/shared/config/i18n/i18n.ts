@@ -1,5 +1,5 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
 
 // import Backend from "i18next-http-backend";
 // import LanguageDetector from "i18next-browser-languagedetector";
@@ -8,27 +8,27 @@ import { initReactI18next } from "react-i18next";
 // for passing in lng and translations on init
 
 // english
-import translationEN from "../../../../public/locales/en/translation.json";
-import mainPageEN from "../../../../public/locales/en/main-page.json";
-import aboutUsPageEN from "../../../../public/locales/en/about-us-page.json";
+import translationEN from '../../../../public/locales/en/translation.json'
+import mainPageEN from '../../../../public/locales/en/main-page.json'
+import aboutUsPageEN from '../../../../public/locales/en/about-us-page.json'
 // русский
-import translationRU from "../../../../public/locales/ru/translation.json";
-import mainPageRU from "../../../../public/locales/ru/main-page.json";
-import aboutUsPageRU from "../../../../public/locales/ru/about-us-page.json";
+import translationRU from '../../../../public/locales/ru/translation.json'
+import mainPageRU from '../../../../public/locales/ru/main-page.json'
+import aboutUsPageRU from '../../../../public/locales/ru/about-us-page.json'
 
 // the translations
 const resources = {
   en: {
     translation: translationEN,
-    "main-page": mainPageEN,
-    "about-us-page": aboutUsPageEN,
+    'main-page': mainPageEN,
+    'about-us-page': aboutUsPageEN
   },
   ru: {
     translation: translationRU,
-    "main-page": mainPageRU,
-    "about-us-page": aboutUsPageRU,
-  },
-};
+    'main-page': mainPageRU,
+    'about-us-page': aboutUsPageRU
+  }
+}
 i18n
   // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
   // learn more: https://github.com/i18next/i18next-http-backend
@@ -43,12 +43,12 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     resources,
-    fallbackLng: "ru",
+    fallbackLng: 'ru',
     debug: __IS_DEV__,
 
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
-  });
+      escapeValue: false // not needed for react as it escapes by default
+    }
+  })
 
-export default i18n;
+export default i18n

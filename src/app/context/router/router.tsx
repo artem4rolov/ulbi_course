@@ -1,6 +1,6 @@
-import { Suspense, lazy } from "react";
-import { Route, Routes } from "react-router-dom";
-import { routerConfig } from "shared/config";
+import { Suspense } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { routerConfig } from 'shared/config'
 
 export const Router = () => {
   return (
@@ -13,5 +13,5 @@ export const Router = () => {
         </Routes>
       </Suspense>
     </div>
-  );
-};
+  )
+}
