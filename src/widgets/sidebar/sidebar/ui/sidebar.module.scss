@@ -1,9 +1,7 @@
 .sidebar {
   background-color: var(--inverted-bg-color);
   height: calc(100vh - var(--navpanel-height));
-
   transition: width 0.15s ease-in-out;
-
   display: flex;
   flex-direction: column;
   gap: 5px;
