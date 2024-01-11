@@ -7,17 +7,17 @@ export enum RouterNames {
 }
 
 export const RouterPaths: Record<RouterNames, string> = {
-  [RouterNames.MAIN]: '/',
-  [RouterNames.ABOUT]: '/about'
+    [RouterNames.MAIN]: '/',
+    [RouterNames.ABOUT]: '/about'
 }
 
 export const routerConfig: Record<RouterNames, RouteProps> = {
-  [RouterNames.MAIN]: {
-    path: RouterPaths.main,
-    element: <MainPage />
-  },
-  [RouterNames.ABOUT]: {
-    path: RouterPaths.about,
-    element: <AboutPage />
-  }
+    [RouterNames.MAIN]: {
+        path: RouterPaths.main,
+        element: <MainPage />
+    },
+    [RouterNames.ABOUT]: {
+        path: RouterPaths.about,
+        element: <AboutPage />
+    }
 }

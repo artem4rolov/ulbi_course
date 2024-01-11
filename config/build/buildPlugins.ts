@@ -4,14 +4,14 @@ import { DefinePlugin, ProgressPlugin, type WebpackPluginInstance } from 'webpac
 import { type BuildOptions } from './types'
 
 export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
-  return [
-    new HTMLWebpackPlugin({
-      template: options.paths.html
-    }),
-    new ProgressPlugin(),
-    new MiniCssExtractPlugin(),
-    new DefinePlugin({
-      __IS_DEV__: options.isDev
-    })
-  ]
+    return [
+        new HTMLWebpackPlugin({
+            template: options.paths.html
+        }),
+        new ProgressPlugin(),
+        new MiniCssExtractPlugin(),
+        new DefinePlugin({
+            __IS_DEV__: options.isDev
+        })
+    ]
 }

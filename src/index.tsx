@@ -6,10 +6,10 @@ import { ThemeContextProvider } from 'app/context'
 import './shared/config/i18n/i18n'
 
 render(
-  <BrowserRouter>
-    <ThemeContextProvider>
-      <App />
-    </ThemeContextProvider>
-  </BrowserRouter>,
-  document.getElementById('root')
+    <BrowserRouter>
+        <ThemeContextProvider>
+            <App />
+        </ThemeContextProvider>
+    </BrowserRouter>,
+    document.getElementById('root')
 )

@@ -7,18 +7,18 @@ interface SidebarProps {
 }
 
 export const Sidebar = (props: SidebarProps) => {
-  const [collapsed, setCollapsed] = useState(false)
+    const [collapsed, setCollapsed] = useState(false)
 
-  return (
-    <div
-      className={classNames(styles.sidebar, {}, [
-        props.className,
-        collapsed ? styles.collapsed : styles.open
-      ])}
-    >
-      <button onClick={() => { setCollapsed((prev) => !prev) }}>collapse</button>
-      <ThemeSwitcher />
-      <LangSwitcher />
-    </div>
-  )
+    return (
+        <div
+            className={classNames(styles.sidebar, {}, [
+                props.className,
+                collapsed ? styles.collapsed : styles.open
+            ])}
+        >
+            <button onClick={() => { setCollapsed((prev) => !prev) }}>collapse</button>
+            <ThemeSwitcher />
+            <LangSwitcher />
+        </div>
+    )
 }

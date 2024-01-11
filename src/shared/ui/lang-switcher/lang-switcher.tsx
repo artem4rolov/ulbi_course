@@ -9,19 +9,19 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher = (props: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation('translation')
+    const { t, i18n } = useTranslation('translation')
 
-  const changeLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-  }
+    const changeLanguage = () => {
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+    }
 
-  return (
-    <Button
-      className={classNames(styles.langSwitcher, {}, [])}
-      theme={ButtonTheme.SOLID}
-      onClick={changeLanguage}
-    >
-      {t('translateButton')}
-    </Button>
-  )
+    return (
+        <Button
+            className={classNames(styles.langSwitcher, {}, [])}
+            theme={ButtonTheme.SOLID}
+            onClick={changeLanguage}
+        >
+            {t('translateButton')}
+        </Button>
+    )
 }
