@@ -12,20 +12,18 @@ export const App = () => {
     const { theme } = useTheme()
 
     return (
-        <Suspense fallback="...">
-            <div
-                className={classNames('app', { selectable: true, hovered: false }, [
-                    theme,
-                    'top-2',
-                    'left-5'
-                ])}
-            >
-                <Navbar />
-                <div className={'app-content'}>
-                    <Sidebar />
-                    <Router />
-                </div>
+        <div
+            className={classNames('app', { selectable: true, hovered: false }, [
+                theme,
+                'top-2',
+                'left-5'
+            ])}
+        >
+            <Navbar />
+            <div className={'app-content'}>
+                <Sidebar />
+                <Router />
             </div>
-        </Suspense>
+        </div>
     )
 }
