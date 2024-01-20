@@ -9,10 +9,10 @@ export function classNames (
     // главный класс
         cls,
         // фильтруем только те свойства, в которых есть true
+        ...additional,
         ...Object.entries(mods)
             .filter(([key, value]) => !!value)
             .map(([key, value]) => key),
         // дополнительные классы
-        ...additional
     ].join(' ')
 }
