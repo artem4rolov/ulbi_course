@@ -3,5 +3,6 @@
   "mainPage": "mainPage",
   "navLinkAboutUsPage": "",
   "navLinkMainPage": "",
+  "notFoundPage": "notFoundPage",
   "translateButton": ""
 }

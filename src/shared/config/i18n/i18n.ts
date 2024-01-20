@@ -11,22 +11,26 @@ import { initReactI18next } from 'react-i18next'
 import translationEN from '../../../../public/locales/en/translation.json'
 import mainPageEN from '../../../../public/locales/en/main-page.json'
 import aboutUsPageEN from '../../../../public/locales/en/about-us-page.json'
+import notFoundPageEN from '../../../../public/locales/en/not-found-page.json'
 // русский
 import translationRU from '../../../../public/locales/ru/translation.json'
 import mainPageRU from '../../../../public/locales/ru/main-page.json'
 import aboutUsPageRU from '../../../../public/locales/ru/about-us-page.json'
+import notFoundPageRU from '../../../../public/locales/ru/not-found-page.json'
 
 // the translations
 const resources = {
     en: {
         translation: translationEN,
         'main-page': mainPageEN,
-        'about-us-page': aboutUsPageEN
+        'about-us-page': aboutUsPageEN,
+        'not-found-page': notFoundPageEN
     },
     ru: {
         translation: translationRU,
         'main-page': mainPageRU,
-        'about-us-page': aboutUsPageRU
+        'about-us-page': aboutUsPageRU,
+        'not-found-page': notFoundPageRU
     }
 }
 i18n
