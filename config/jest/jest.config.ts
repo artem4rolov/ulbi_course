@@ -6,49 +6,35 @@
 import type {Config} from 'jest';
 
 const config: Config = {
-    // All imported modules in your tests should be mocked automatically
-    // automock: false,
-
-    // Stop running tests after `n` failures
-    // bail: 0,
-
-    // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "C:\\Users\\Artem\\AppData\\Local\\Temp\\jest",
-
-    // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
-
-    // Indicates whether the coverage information should be collected while executing the test
-    collectCoverage: true,
-
-    // An array of glob patterns indicating a set of files for which coverage information should be collected
-    // collectCoverageFrom: undefined,
-
-    // The directory where Jest should output its coverage files
-    coverageDirectory: "coverage",
-    testEnvironment: "jsdom",
+    testEnvironment: 'jsdom',
+    coveragePathIgnorePatterns: [
+        '\\\\node_modules\\\\',
+    ],
     moduleFileExtensions: [
-        "js",
-        "mjs",
-        "cjs",
-        "jsx",
-        "ts",
-        "tsx",
-        "json",
-        "node"
+        'js',
+        'jsx',
+        'ts',
+        'tsx',
+        'json',
+        'node',
     ],
     moduleDirectories: [
-        "node_modules"
+        'node_modules',
     ],
-    testPathIgnorePatterns: [
-        "\\\\node_modules\\\\"
+    modulePaths: [
+        '<rootDir>src',
+    ],
+    testMatch: [
+        // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     rootDir: '../../',
-    testMatch: [
-        // "**/__tests__/**/*.[jt]s?(x)",
-        // "**/?(*.)+(spec|test).[tj]s?(x)"
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-    ],
+    // setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+    moduleNameMapper: {
+        '\\.s?css$': 'identity-obj-proxy',
+        // '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    },
 
     // An array of regexp pattern strings used to skip coverage collection
     // coveragePathIgnorePatterns: [
