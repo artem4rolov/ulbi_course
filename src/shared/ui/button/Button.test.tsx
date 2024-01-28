@@ -4,12 +4,12 @@ import { Button } from './button';
 import { ButtonTheme } from './button.types';
 
 describe('Button', () => {
-    test('Test render', () => {
+    test('Тест рендера текста в документе', () => {
         render(<Button theme={ButtonTheme.LINK}>TEST</Button>);
         expect(screen.getByText('TEST')).toBeInTheDocument();
     });
 
-    test('Test clear theme', () => {
+    test('Тест наличия класса в кастомной кнопке', () => {
         render(<Button theme={ButtonTheme.LINK}>TEST</Button>);
         expect(screen.getByText('TEST')).toHaveClass('link');
         screen.debug();

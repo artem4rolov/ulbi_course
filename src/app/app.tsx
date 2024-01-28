@@ -11,9 +11,10 @@ import '../shared/config/i18n/i18n'
 export const App = () => {
     const { theme } = useTheme()
 
-    useEffect(() => {
-        throw new Error()
-    }, [])
+    // тест падения приложения и экрана ошибки
+    // useEffect(() => {
+    //     throw new Error()
+    // }, [])
 
     return (
         <div
