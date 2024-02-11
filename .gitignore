@@ -3,4 +3,4 @@
 /build
 package-lock.json
 /.yarn
-extractedTranslations
+/extractedTranslations
