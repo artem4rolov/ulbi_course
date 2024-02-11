@@ -1,0 +1,18 @@
+:root {
+  // шрифты
+  --font-family-default: "Cansolas", "Times New Roman", serif;
+
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-size-l: 24px;
+  --font-line-l: 32px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-default);
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-default);
+
+  // навигационная панель
+  --navpanel-height: 50px;
+  // сайдбар
+  --sidebar-width: 300px;
+
+  --sidebar-width-collapsed: 60px;
+}
