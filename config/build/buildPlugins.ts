@@ -5,7 +5,8 @@ import { DefinePlugin, ProgressPlugin, type WebpackPluginInstance } from 'webpac
 import { type BuildOptions } from './types'
 
 export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
-    return [
+
+    const plugins = [
         new HTMLWebpackPlugin({
             template: options.paths.html
         }),
@@ -14,8 +15,13 @@ export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
         new DefinePlugin({
             __IS_DEV__: options.isDev
         }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false
-        })
     ]
+
+    if (options.isDev) {
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false
+        }))
+    }
+
+    return plugins
 }
