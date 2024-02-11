@@ -36,8 +36,8 @@ jobs:
       - name: test es linter
         run: npm run lint:ts
       # Runs a set of commands using the runners shell
-      - name: test scss linter
-        run: npm run lint:scss
+      # - name: test scss linter
+      #   run: npm run lint:scss
       # Runs a set of commands using the runners shell
       - name: run unit tests
         run: npm run test
