@@ -1,6 +1,10 @@
 .app.light {
   --bg-color: rgb(222 211 211);
   --inverted-bg-color: rgb(115 115 115);
+
+  --hovered-bg-color: rgb(185, 173, 173);
+  --hovered-inverted-bg-color: rgb(207, 193, 193);
+
   --primary-text-color: rgb(15 15 204);
   --secondary-text-color: rgb(63 63 247);
 }

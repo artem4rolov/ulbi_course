@@ -1,11 +1,37 @@
 .sidebar {
   background-color: var(--inverted-bg-color);
+
   height: calc(100vh - var(--navpanel-height));
+
   transition: width 0.15s ease-in-out;
+
+  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 5px;
   align-items: center;
+
+  padding: 20px 20px;
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  &-settings {
+    display: flex;
+    gap: 8px;
+
+    &-collapsed {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 .collapsed {
@@ -14,4 +40,19 @@
 
 .open {
   width: var(--sidebar-width);
+}
+
+.collapse-button {
+  position: absolute;
+  right: -40px;
+  bottom: 40px;
+}
+
+.sidebar.collapsed {
+  padding: 10px 5px;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
 }

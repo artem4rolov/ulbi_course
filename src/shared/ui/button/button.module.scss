@@ -5,44 +5,116 @@
 
 .outline {
   background: transparent;
-  border: 1px solid black;
+  border: 1px solid var(--bg-color);
+  color: var(--bg-color);
   border-radius: 8px;
   padding: 5px 10px;
 
   &:active {
-    border: 1px solid gray;
+    border: 1px solid var(--hovered-bg-color);
   }
 
   &:hover {
-    border: 1px solid rgb(70 70 70);
+    border: 1px solid var(--hovered-bg-color);
+  }
+}
+
+.outline_inverted {
+  background: transparent;
+  border: 1px solid var(--inverted-bg-color);
+  color: var(--inverted-bg-color);
+  border-radius: 8px;
+  padding: 5px 10px;
+
+  &:active {
+    border: 1px solid var(--hovered-inverted-bg-color);
+  }
+
+  &:hover {
+    border: 1px solid var(--hovered-inverted-bg-color);
   }
 }
 
 .solid {
-  background: green;
-  color: white;
+  background: var(--bg-color);
+  color: var(--inverted-bg-color);
+  border-radius: 8px;
+  border: transparent;
+  padding: 5px 10px;
+
+  &:active {
+    background: var(--hovered-bg-color);
+  }
+
+  &:hover {
+    background: var(--hovered-bg-color);
+  }
+}
+
+.solid_inverted {
+  background: var(--inverted-bg-color);
+  color: var(--bg-color);
+  border: transparent;
   border-radius: 8px;
   padding: 5px 10px;
 
   &:active {
-    background: greenyellow;
+    background: var(--hovered-inverted-bg-color);
   }
 
   &:hover {
-    background: rgb(22 110 22);
+    background: var(--hovered-inverted-bg-color);
   }
 }
 
 .link {
   background: transparent;
   border: none;
-  color: var(--primary-color);
+  color: var(--bg-color);
 
   &:active {
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid var(--hovered-bg-color);
   }
 
   &:hover {
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid var(--hovered-bg-color);
   }
+}
+
+.link_inverted {
+  background: transparent;
+  border: none;
+  color: var(--inverted-bg-color);
+
+  &:active {
+    border-bottom: 1px solid var(--hovered-inverted-bg-color);
+  }
+
+  &:hover {
+    border-bottom: 1px solid var(--hovered-inverted-bg-color);
+  }
+}
+
+.squared {
+  width: 40px;
+  height: 40px;
+  font-size: --font-line-m;
+  border-radius: 0;
+}
+
+.size_m {
+  min-width: var( --button-size-l);
+  // height: var(--font-line-m);
+  font-size: var(--font-size-m);
+}
+
+.size_l {
+  min-width: var( --button-size-m);
+  // height: var(--font-line-l);
+  font-size: var(--font-size-l);
+}
+
+.size_xl {
+  min-width: var( --button-size-xl);
+  font-size: var(--font-size-xl);
 }
