@@ -23,4 +23,5 @@ export interface ButtonProps
   theme: ButtonTheme
   size?: ButtonSize
   children: React.ReactNode | string
+  testId?: string
 }

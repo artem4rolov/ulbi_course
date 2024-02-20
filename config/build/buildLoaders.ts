@@ -44,7 +44,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule {
                         "i18next-extract",
                         {
                             locales: ["en", "ru"],
-                            keyAsDefaultValue: true,
+                            // keyAsDefaultValue: true,
                         },
                     ],
                 ],

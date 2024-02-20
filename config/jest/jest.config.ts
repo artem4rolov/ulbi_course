@@ -33,11 +33,12 @@ const config: Config = {
     // setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
-        "^.+\\.svg$": "<rootDir>config/jest/svgTransform.tsx" 
+        "\\.svg$": "<rootDir>config/jest/svgTransform.tsx",
+
     },
     globals: {
         __IS_DEV__: true
-    }
+    },
     // An array of regexp pattern strings used to skip coverage collection
     // coveragePathIgnorePatterns: [
     //   "\\\\node_modules\\\\"

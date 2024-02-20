@@ -6,18 +6,10 @@ i18n
     .init({
         lng: 'ru',
         fallbackLng: 'ru',
-
         // have a common namespace used around the full app
         ns: ['translationsNS'],
         defaultNS: 'translationsNS',
-
         debug: false,
-
-        interpolation: {
-            escapeValue: false, // not needed for react!!
-        },
-
-        resources: { ru: { translationsNS: {} } },
     });
 
 export {i18n as is18nForTests};
