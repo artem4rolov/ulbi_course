@@ -1,34 +1,10 @@
 import { RuleSetRule } from "webpack";
 import { BuildOptions } from "./types";
 import { cssLoader } from "./loaders";
+import { fileLoader } from "./loaders/file-loader";
 
 export function buildLoaders(options: BuildOptions): RuleSetRule {
-    const svgLoader = {
-        test: /\.svg$/,
-        issuer: {
-            and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-        },
-        use: [
-            {
-                loader: "@svgr/webpack",
-                options: {
-                    prettier: false,
-                    svgo: false,
-                    svgoConfig: {
-                        plugins: [{ removeViewBox: false }],
-                    },
-                    titleProp: true,
-                    ref: true,
-                },
-            },
-            // {
-            //   loader: "file-loader",
-            //   options: {
-            //     name: "static/media/[name].[hash].[ext]",
-            //   },
-            // },
-        ],
-    };
+    const svgLoader = fileLoader()
 
     const sassLoader = cssLoader(options.isDev)
 
