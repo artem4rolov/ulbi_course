@@ -2,5 +2,7 @@
   "navLinkMainPage": "Main page",
   "navLinkAboutUsPage": "About us",
   "translateButton": "English",
-  "translateButtonShort": "En"
+  "translateButtonShort": "En",
+  "signInButton": "Sign in"
+
 }

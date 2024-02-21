@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { useTheme } from 'shared/hooks';
 import { classNames } from 'shared/helpers';
+import { Modal } from 'shared/ui/modal';
 import { Navbar, Sidebar } from 'widgets';
 import { Router } from './providers';
 
@@ -10,10 +11,6 @@ import '../shared/config/i18n/i18n';
 
 export const App = () => {
     const { theme } = useTheme();
-    // тест падения приложения и экрана ошибки
-    // useEffect(() => {
-    //     throw new Error()
-    // }, [])
 
     return (
         <div
