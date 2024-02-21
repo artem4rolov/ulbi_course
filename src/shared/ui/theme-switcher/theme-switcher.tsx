@@ -1,7 +1,7 @@
 import { DarkThemeIcon, LightThemeIcon } from 'shared/assets'
 import { useTheme } from 'shared/hooks'
 import { Button } from '../button'
-import { ButtonTheme } from '../button/button.types'
+import { ButtonSize, ButtonTheme } from '../button/button.types'
 
 const SwitchIcon = {
     dark: <DarkThemeIcon />,
@@ -13,7 +13,7 @@ export const ThemeSwitcher = () => {
 
     return (
         <div>
-            <Button theme={ButtonTheme.LINK} onClick={toggleTheme}>
+            <Button theme={ButtonTheme.LINK} size={ButtonSize.BUTTON_SIZE_M} onClick={toggleTheme}>
                 {SwitchIcon[theme]}
             </Button>
         </div>

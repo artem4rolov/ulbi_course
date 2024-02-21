@@ -1,7 +1,21 @@
+a {
+  list-style-type: none;
+  list-style: none;
+  text-decoration: none;
+}
+
 .primary {
   color: var(--primary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .secondary {
   color: var(--secondary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }

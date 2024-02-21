@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
-import { ButtonTheme } from './button.types';
+import { ButtonSize, ButtonTheme } from './button.types';
 import { ThemeProviderDecorator } from 'app/providers';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -30,6 +30,27 @@ export const Solid: Story = {
     args: {
         children: 'Solid',
         theme: ButtonTheme.SOLID
+    },
+};
+export const SolidM: Story = {
+    args: {
+        children: 'Solid',
+        theme: ButtonTheme.SOLID,
+        size: ButtonSize.BUTTON_SIZE_M
+    },
+};
+export const SolidL: Story = {
+    args: {
+        children: 'Solid',
+        theme: ButtonTheme.SOLID,
+        size: ButtonSize.BUTTON_SIZE_L
+    },
+};
+export const SolidXL: Story = {
+    args: {
+        children: 'Solid',
+        theme: ButtonTheme.SOLID,
+        size: ButtonSize.BUTTON_SIZE_XL
     },
 };
 export const SolidDark: Story = {

@@ -1,14 +1,17 @@
 import { type FC } from 'react'
 import { classNames } from 'shared/helpers'
-import { type ButtonProps, ButtonTheme } from './button.types'
+import { type ButtonProps, ButtonTheme, ButtonSize } from './button.types'
 import styles from './button.module.scss'
 
 export const Button: FC<ButtonProps> = (props) => {
-    const { className, theme = ButtonTheme.SOLID, children, onClick } = props
+    const { className, theme = ButtonTheme.SOLID, size = ButtonSize.BUTTON_SIZE_M,  children, onClick, testId } = props
+
+    const additional = [className, styles[theme], styles[size]]
 
     return (
         <button
-            className={classNames(styles.button, {}, [className, styles[theme]])}
+            data-testid={testId}
+            className={classNames(styles.button, {}, additional)}
             onClick={onClick}
         >
             {children}

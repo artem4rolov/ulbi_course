@@ -49,7 +49,6 @@ i18n
         resources,
         fallbackLng: 'ru',
         debug: false,
-
         interpolation: {
             escapeValue: false // not needed for react as it escapes by default
         }
