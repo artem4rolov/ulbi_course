@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeProviderDecorator } from 'app/providers';
+import { Theme, ThemeProviderDecorator } from 'app/providers';
 import { AppLink } from './app-link';
 import { AppLinkTheme } from './app-link.types';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -17,7 +17,7 @@ const meta = {
         (Story) => {
             return (
                 <BrowserRouter>
-                    <ThemeProviderDecorator theme='light'>
+                    <ThemeProviderDecorator theme={Theme.light}>
                         <Story />
                     </ThemeProviderDecorator>
                 </BrowserRouter>
@@ -46,7 +46,7 @@ export const PrimaryInverted: Story = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='dark'>
+                <ThemeProviderDecorator theme={Theme.dark}>
                     <Story />
                 </ThemeProviderDecorator>
             )
@@ -71,7 +71,7 @@ export const SecondaryInverted: Story = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='dark'>
+                <ThemeProviderDecorator theme={Theme.dark}>
                     <Story />
                 </ThemeProviderDecorator>
             )

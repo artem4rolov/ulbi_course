@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeProviderDecorator, RouterProviderDecorator } from 'app/providers';
+import { ThemeProviderDecorator, RouterProviderDecorator, Theme } from 'app/providers';
 import { Sidebar } from './sidebar';
 
 
@@ -15,7 +15,7 @@ const meta = {
         (Story) => {
             return (
                 <RouterProviderDecorator>
-                    <ThemeProviderDecorator theme='light'>
+                    <ThemeProviderDecorator theme={Theme.light}>
                         <Story />
                     </ThemeProviderDecorator>
                 </RouterProviderDecorator>
@@ -40,7 +40,7 @@ export const Dark: Story = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='dark'>
+                <ThemeProviderDecorator theme={Theme.dark}>
                     <Story />
                 </ThemeProviderDecorator>
             )

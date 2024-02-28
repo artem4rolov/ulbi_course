@@ -26,7 +26,7 @@ export const Navbar = (props: NavbarProps) => {
                 </Button>
             </div>
             {/* <Portal element={<Modal isOpen={isOpen} setIsOpen={setIsOpen} />} domNode={document.body} /> */}
-            <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Portal element={<Modal isOpen={isOpen} setIsOpen={setIsOpen} />} domNode={document.body} />
         </div>
     )
 }

@@ -4,8 +4,8 @@ import { Button } from '../button'
 import { ButtonSize, ButtonTheme } from '../button/button.types'
 
 const SwitchIcon = {
-    dark: <DarkThemeIcon />,
-    light: <LightThemeIcon />
+    app_dark_theme: <DarkThemeIcon />,
+    app_light_theme: <LightThemeIcon />
 }
 
 export const ThemeSwitcher = () => {

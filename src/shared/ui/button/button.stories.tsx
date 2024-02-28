@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
 import { ButtonSize, ButtonTheme } from './button.types';
-import { ThemeProviderDecorator } from 'app/providers';
+import { Theme, ThemeProviderDecorator } from 'app/providers';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -14,7 +14,7 @@ const meta = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='light'>
+                <ThemeProviderDecorator theme={Theme.light}>
                     <Story />
                 </ThemeProviderDecorator>
             )
@@ -61,7 +61,7 @@ export const SolidDark: Story = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='dark'>
+                <ThemeProviderDecorator theme={Theme.dark}>
                     <Story />
                 </ThemeProviderDecorator>
             )
@@ -84,7 +84,7 @@ export const OutlineDark: Story = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='dark'>
+                <ThemeProviderDecorator theme={Theme.dark}>
                     <Story />
                 </ThemeProviderDecorator>
             )
@@ -107,7 +107,7 @@ export const LinkDark: Story = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='dark'>
+                <ThemeProviderDecorator theme={Theme.dark}>
                     <Story />
                 </ThemeProviderDecorator>
             )

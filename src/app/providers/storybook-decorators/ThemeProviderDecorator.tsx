@@ -1,14 +1,14 @@
 import { FC } from 'react'
 import '../../styles/index.scss'
-import { classNames } from 'shared'
+import { Theme } from '../theme-context'
 
 interface ThemeProviderDecoratorProps {
-    theme: 'light' | 'dark',
+    theme: Theme,
     children: React.ReactNode
 }
 
 
-export const ThemeProviderDecorator: FC<ThemeProviderDecoratorProps> = ({theme = 'light', children}) => {
+export const ThemeProviderDecorator: FC<ThemeProviderDecoratorProps> = ({theme = Theme.light, children}) => {
     return (
         <div
             className={`app ${theme}`}

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeProviderDecorator } from 'app/providers';
+import { Theme, ThemeProviderDecorator } from 'app/providers';
 import { PageLoader } from './page-loader';
 
 
@@ -14,7 +14,7 @@ const meta = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='light'>
+                <ThemeProviderDecorator theme={Theme.light}>
                     <Story />
                 </ThemeProviderDecorator>
             )
@@ -38,7 +38,7 @@ export const PageLoaderDark: Story = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProviderDecorator theme='dark'>
+                <ThemeProviderDecorator theme={Theme.light}>
                     <Story />
                 </ThemeProviderDecorator>
             )
