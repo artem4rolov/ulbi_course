@@ -24,10 +24,10 @@ export const Sidebar = (props: SidebarProps) => {
             ])}
         >
             <div className={!collapsed ? styles['sidebar-links'] : styles['sidebar-links-collapsed']}>
-                <AppLink theme={AppLinkTheme.PRIMARY} to="/about">
+                <AppLink theme={AppLinkTheme.PRIMARY_INVERTED} to="/about">
                     <AboutUsIcon />{!collapsed && t('navLinkAboutUsPage')}
                 </AppLink>
-                <AppLink theme={AppLinkTheme.PRIMARY} to="/">
+                <AppLink theme={AppLinkTheme.PRIMARY_INVERTED} to="/">
                     <GoHomeIcon />{!collapsed && t('navLinkMainPage')}
                 </AppLink>
             </div>

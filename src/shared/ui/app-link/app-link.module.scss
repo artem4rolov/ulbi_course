@@ -1,6 +1,5 @@
 a {
   list-style-type: none;
-  list-style: none;
   text-decoration: none;
 }
 
@@ -12,8 +11,24 @@ a {
   gap: 5px;
 }
 
+.primary-inverted {
+  color: var(--inverted-primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 .secondary {
   color: var(--secondary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.secondary-inverted {
+  color: var(--inverted-secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;

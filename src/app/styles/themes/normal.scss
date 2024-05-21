@@ -1,10 +1,13 @@
 .app_light_theme {
-  --bg-color: rgb(222 211 211);
-  --inverted-bg-color: rgb(115 115 115);
+  --bg-color: #e8e8ea;
+  --inverted-bg-color: #090949;
 
   --hovered-bg-color: rgb(185, 173, 173);
   --hovered-inverted-bg-color: rgb(207, 193, 193);
 
-  --primary-text-color: rgb(15 15 204);
-  --secondary-text-color: rgb(63 63 247);
+  --primary-text-color: #0232c2;
+  --secondary-text-color: #0449e0;
+
+  --inverted-primary-color: #049604;
+  --inverted-secondary-color: #04ff04;
 }

@@ -1,8 +1,14 @@
 {
-    "extends": "stylelint-config-standard-scss",
-    "rules": {
-        
-        "scss/double-slash-comment-empty-line-before": null,
-        "custom-property-empty-line-before": null
-    }
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss"
+  ],
+  "rules": {
+    "declaration-empty-line-before": null,
+    "no-descending-specificity": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "color-function-notation": null,
+    "custom-property-empty-line-before": null,
+    "selector-class-pattern": null
   }
+}

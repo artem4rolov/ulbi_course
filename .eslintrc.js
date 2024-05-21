@@ -1,40 +1,76 @@
 module.exports = {
-    env: {
-        browser: true,
-        es2021: true,
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: [
+    'plugin:react-hooks/recommended',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
+  ],
+  overrides: [
+    {
+      files: ['./src/**/*.tsx', './src/**/*.ts'],
+      rules: {
+        '@typescript-eslint/semi': 'off',
+        '@typescript-eslint/restrict-template-expressions': 'off',
+        '@typescript-eslint/restrict-plus-operands': 'off',
+        'import/no-anonymous-default-export': 'off',
+        '@typescript-eslint/require-await': 'off',
+        '@typescript-eslint/no-unused-expressions': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'warn',
+        '@typescript-eslint/no-floating-promises': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': warn,
+        'react/no-children-prop': 'off',
+        camelcase: 'off',
+      },
+      extends: [
+        'prettier',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+      ],
     },
-    extends: ['plugin:react/recommended', 'plugin:storybook/recommended'],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
-        ecmaVersion: 'latest',
-        sourceType: 'module',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
     },
-    plugins: [
-        'react',
-        '@typescript-eslint',
+    project: './tsconfig.json',
+  },
+  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+  rules: {
+    'prettier/prettier': [
+      'warn',
+      {
+        endOfLine: 'auto',
+        semi: false,
+        singleQuote: true,
+        bracketSameLine: false,
+        useTabs: false,
+        printWidth: 80,
+        trailingComma: 'all',
+        bracketSpacing: true,
+        arrowParens: 'always',
+        jsxBracketSameLine: false,
+        htmlWhitespaceSensitivity: 'css',
+      },
     ],
-    rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
-        'import/no-unresolved': 'off',
-        'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
-        'react/require-default-props': 'off',
-        'react/react-in-jsx-scope': 'off',
-        'react/jsx-props-no-spreading': 'warn',
-        'react/function-component-definition': 'off',
-        'no-shadow': 'off',
-        'import/extensions': 'off',
-        'import/no-extraneous-dependencies': 'off',
-        'no-underscore-dangle': 'off',
-        'react/no-deprecated': 'off'
-    },
-    globals: {
-        __IS_DEV__: true,
-    },
-};
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-uses-react': 'off',
+    'react-hooks/exhaustive-deps': 'warn',
+    'prefer-const': 'warn',
+  },
+  ignorePatterns: ['./src/index.tsx'],
+}
