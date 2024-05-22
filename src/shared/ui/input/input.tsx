@@ -1,21 +1,60 @@
-import React, { FC, InputHTMLAttributes } from 'react'
+import { ChangeEvent, memo, useEffect, useRef, useState } from 'react'
 
-import styles from './input.styles.scss'
+import styles from './input.module.scss'
+import { InputProps } from './input.types'
 
-interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
-  onChange: (value: string) => void
-  value: string
-}
+export const Input = memo((props: InputProps) => {
+  const { placeholder, onChange, value, type, autoFocus, ...otherProps } = props
 
-const Input: FC<InputProps> = (props) => {
-  const {} = props
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const [caretPosition, setCuretPosition] = useState(0)
+  const [isFocused, setIsFocused] = useState(false)
+
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.value)
+    setCuretPosition(e.target.value.length)
+  }
+
+  // хз что за тип тут с selectionEnd/selectionStart
+  const onSelectChange = (e: any) => {
+    setCuretPosition(e.target.selectionStart)
+  }
+
+  useEffect(() => {
+    if (isFocused) {
+      inputRef.current.focus()
+    }
+  }, [isFocused])
 
   return (
-    <div className={styles['input-wrapper']}>
-      <input type="text" />
+    <div
+      className={styles['input-container']}
+      onClick={() => setIsFocused(true)}
+    >
+      {placeholder && <span>{placeholder + ' >>'}</span>}
+      <div
+        className={styles['input-wrapper']}
+        onBlur={() => setIsFocused(false)}
+      >
+        <input
+          type={type}
+          onSelect={onSelectChange}
+          // трабл с автофокусом
+          autoFocus
+          onChange={onInputChange}
+          ref={inputRef}
+          {...otherProps}
+        />
+        {isFocused && (
+          <span
+            style={{ left: `${caretPosition * 7.2}px` }}
+            className={styles['input-caret']}
+          >
+            _
+          </span>
+        )}
+      </div>
     </div>
   )
-}
-
-export default Input
+})

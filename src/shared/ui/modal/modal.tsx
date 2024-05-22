@@ -1,8 +1,10 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
+
 import { ModalProps } from './modal.types'
+import { classNames } from 'shared/helpers'
 
 import styles from './modal.module.scss'
-import { classNames } from 'shared/helpers'
 
 export const Modal: FC<ModalProps> = ({
   className,
@@ -10,7 +12,11 @@ export const Modal: FC<ModalProps> = ({
   setIsOpen,
   children,
 }) => {
-  return (
+  if (!isOpen) {
+    return null
+  }
+
+  return createPortal(
     <div
       onClick={() => setIsOpen(false)}
       className={classNames(styles['modal-container'], {}, [
@@ -24,6 +30,7 @@ export const Modal: FC<ModalProps> = ({
       >
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }

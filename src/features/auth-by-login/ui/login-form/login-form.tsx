@@ -1,14 +1,24 @@
 import React, { FC } from 'react'
+import { Input } from 'shared'
 
 interface LoginFormProps {
-  value: string
+  className?: string
 }
 
 export const LoginForm: FC<LoginFormProps> = (props) => {
   return (
     <div>
-      <input type="text" placeholder="username" />
-      <input type="text" placeholder="password" />
+      <Input
+        type="text"
+        placeholder="username"
+        onChange={(value) => console.log(value)}
+        autoFocus={true}
+      />
+      <Input
+        type="text"
+        placeholder="password"
+        onChange={(value) => console.log(value)}
+      />
     </div>
   )
 }

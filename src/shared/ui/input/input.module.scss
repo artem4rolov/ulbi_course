@@ -1,0 +1,57 @@
+.input {
+  &-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &-wrapper {
+    position: relative;
+
+    input {
+      padding: 3px 1px;
+
+      border: none;
+      background: none;
+
+      caret-color: transparent;
+
+      color: var(--inverted-primary-color);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+
+      animation: 0.7s animate-caret infinite;
+
+      pointer-events: none;
+    }
+
+    @keyframes animate-caret {
+      0% {
+        opacity: 0;
+      }
+
+      25% {
+        opacity: 0.01;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+
+      75% {
+        opacity: 0.7;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}

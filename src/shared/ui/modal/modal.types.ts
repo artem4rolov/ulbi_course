@@ -1,7 +1,7 @@
-import { ReactNode, SetStateAction } from "react";
+import { ReactNode, SetStateAction } from 'react'
 
 export interface ModalProps {
-  className?: string;
+  className?: string
   isOpen: boolean
   setIsOpen: React.Dispatch<SetStateAction<boolean>>
   children: ReactNode

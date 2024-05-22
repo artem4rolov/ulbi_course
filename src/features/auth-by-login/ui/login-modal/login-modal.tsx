@@ -12,7 +12,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-      <LoginForm value="" />
+      <LoginForm />
     </Modal>
   )
 }
