@@ -16,7 +16,8 @@
     "test:ui": "npx loki test",
     "test:ui:approve": "npx loki approve",
     "storybook": "storybook dev -p 6006 -c config/storybook",
-    "build-storybook": "storybook build -c config/storybook"
+    "build-storybook": "storybook build -c config/storybook",
+    "typecheck": "tsc --skipLibCheck"
   },
   "author": "",
   "license": "ISC",
@@ -93,7 +94,6 @@
     "react-redux": "8.0.4",
     "react-router-dom": "6.2.1"
   },
-  "packageManager": "yarn@3.8.0",
   "loki": {
     "configurations": {
       "chrome.laptop": {

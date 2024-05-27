@@ -1,2 +1,2 @@
-export {createStore} from './store'
-export {StoreSchema} from './state-schema.types'
+export { createReduxStore } from './store'
+export { StoreSchema } from './state-schema.types'
