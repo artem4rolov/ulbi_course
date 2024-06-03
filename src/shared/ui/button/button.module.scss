@@ -103,18 +103,20 @@
 }
 
 .size_m {
-  min-width: var( --button-size-l);
+  min-width: var(--button-size-l);
+
   // height: var(--font-line-m);
   font-size: var(--font-size-m);
 }
 
 .size_l {
-  min-width: var( --button-size-m);
+  min-width: var(--button-size-m);
+
   // height: var(--font-line-l);
   font-size: var(--font-size-l);
 }
 
 .size_xl {
-  min-width: var( --button-size-xl);
+  min-width: var(--button-size-xl);
   font-size: var(--font-size-xl);
 }

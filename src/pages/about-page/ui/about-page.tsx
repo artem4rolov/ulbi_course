@@ -1,11 +1,15 @@
-import { Counter } from 'entities'
+import { Counter } from 'entities/counter'
 import { useTranslation } from 'react-i18next'
 
 const AboutPage = () => {
-    const { t } = useTranslation('about-us-page')
+  const { t } = useTranslation('about-us-page')
 
-    return <div>{t('aboutUsPage')}
-        <Counter /></div>
+  return (
+    <div>
+      {t('aboutUsPage')}
+      <Counter />
+    </div>
+  )
 }
 
 export default AboutPage

@@ -11,13 +11,13 @@ export enum ButtonSize {
   BUTTON_SIZE_M = 'size_m',
   BUTTON_SIZE_L = 'size_l',
   BUTTON_SIZE_XL = 'size_xl',
-  BUTTON_SQUARED = 'squared'
+  BUTTON_SQUARED = 'squared',
 }
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
   > {
   className?: string
   theme: ButtonTheme

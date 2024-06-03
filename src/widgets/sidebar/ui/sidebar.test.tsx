@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/react'
 import { Sidebar } from './sidebar'
 import { componentRender } from 'app/providers/tests/testWithRouter/component-render'
 

@@ -1,4 +1,4 @@
-import { Counter } from 'entities'
+import { Counter } from '../../../entities/counter/ui/counter'
 import { useTranslation } from 'react-i18next'
 import { Input } from 'shared'
 

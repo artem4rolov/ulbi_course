@@ -1,1 +1,1 @@
-export  * from './testWithTranslation'
+export * from './testWithTranslation'
