@@ -3,6 +3,7 @@
   "navLinkAboutUsPage": "About us",
   "translateButton": "English",
   "translateButtonShort": "En",
-  "signInButton": "Sign in"
-
+  "signInButton": "Sign in",
+  "logoutButton": "Logout",
+  "authForm": "Login form"
 }

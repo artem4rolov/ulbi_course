@@ -11,6 +11,7 @@ export const Button: FC<ButtonProps> = (props) => {
     children,
     onClick,
     testId,
+    disabled = false,
   } = props
 
   const additional = [className, styles[theme], styles[size]]
@@ -18,8 +19,9 @@ export const Button: FC<ButtonProps> = (props) => {
   return (
     <button
       data-testid={testId}
-      className={classNames(styles.button, {}, additional)}
+      className={classNames(styles.button, { disabled: disabled }, additional)}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

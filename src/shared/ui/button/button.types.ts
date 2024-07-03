@@ -24,4 +24,5 @@ export interface ButtonProps
   size?: ButtonSize
   children: React.ReactNode | string
   testId?: string
+  disabled?: boolean
 }

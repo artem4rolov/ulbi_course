@@ -1,0 +1,20 @@
+.text {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: start;
+  }
+
+  &-title {
+    font: var(--font-l);
+  }
+
+  &-text {
+    font: var(--font-m);
+  }
+}
+
+.error {
+  color: var(--red-dark);
+}

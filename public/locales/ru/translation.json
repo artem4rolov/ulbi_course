@@ -3,5 +3,7 @@
   "navLinkAboutUsPage": "О нас",
   "translateButton": "Русский",
   "translateButtonShort": "Ру",
-  "signInButton": "Войти"
+  "signInButton": "Войти",
+  "logoutButton": "Выйти",
+  "authForm": "Форма авторизации"
 }

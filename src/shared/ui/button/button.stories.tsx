@@ -113,3 +113,11 @@ export const LinkDark: Story = {
     },
   ],
 }
+
+export const Disabled: Story = {
+  args: {
+    children: 'Disabled button',
+    theme: ButtonTheme.SOLID,
+    disabled: true,
+  },
+}

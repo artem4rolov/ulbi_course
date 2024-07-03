@@ -1,1 +1,1 @@
-export * from './auth-by-login'
+export * from './auth-by-username'

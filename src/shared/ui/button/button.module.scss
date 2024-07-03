@@ -1,6 +1,10 @@
 .button {
   max-width: 200px;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 .outline {
