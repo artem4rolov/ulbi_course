@@ -34,6 +34,13 @@ const config: Config = {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         "\\.svg$": "<rootDir>config/jest/svgTransform.tsx",
+        '^app/(.*)$': '<rootDir>/src/app/$1',
+        '^pages/(.*)$': '<rootDir>/src/pages/$1',
+        '^widgets/(.*)$': '<rootDir>/src/widgets/$1',
+        '^features/(.*)$': '<rootDir>/src/features/$1',
+        '^entities/(.*)$': '<rootDir>/src/entities/$1',
+        '^entities/user(.*)$': '<rootDir>/src/entities/user/$1',
+        '^shared/(.*)$': '<rootDir>/src/shared/$1',
 
     },
     globals: {

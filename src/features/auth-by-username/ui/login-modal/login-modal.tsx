@@ -1,8 +1,11 @@
-import { Dispatch, FC, SetStateAction } from 'react'
-import { Modal } from 'shared'
-import { LoginForm } from '../login-form/login-form'
-import { Text } from 'shared/ui/text'
+import { Dispatch, FC, SetStateAction, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import { Modal } from 'shared'
+import { Text } from 'shared/ui/text'
+import { Loader } from 'shared/ui/loader'
+
+import { LoginFormAsync } from '../login-form/login-form.async'
 
 import styles from './login-modal.module.scss'
 
@@ -22,7 +25,9 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
       className={styles['login-form']}
     >
       <Text title={t('authForm')} />
-      <LoginForm />
+      <Suspense fallback={<Loader />}>
+        <LoginFormAsync />
+      </Suspense>
     </Modal>
   )
 }

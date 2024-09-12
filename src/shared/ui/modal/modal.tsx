@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { createPortal } from 'react-dom'
 
 import { ModalProps } from './modal.types'

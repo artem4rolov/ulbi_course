@@ -5,7 +5,7 @@ import { loginByUserName } from 'features/auth-by-username/services/auth-service
 const initialState: AuthSchema = {
   username: '',
   password: '',
-  error: null,
+  error: '',
   isLoading: false,
 }
 
@@ -24,7 +24,7 @@ export const authByUserNameSlice = createSlice({
     builder
       .addCase(loginByUserName.pending, (state) => {
         state.isLoading = true
-        state.error = null
+        state.error = ''
       })
       .addCase(loginByUserName.fulfilled, (state) => {
         state.isLoading = false
