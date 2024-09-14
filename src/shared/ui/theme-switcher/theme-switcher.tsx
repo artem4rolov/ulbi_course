@@ -2,13 +2,14 @@ import { DarkThemeIcon, LightThemeIcon } from 'shared/assets'
 import { useTheme } from 'shared/hooks'
 import { Button } from '../button'
 import { ButtonSize, ButtonTheme } from '../button/button.types'
+import { memo } from 'react'
 
 const SwitchIcon = {
   app_dark_theme: <DarkThemeIcon />,
   app_light_theme: <LightThemeIcon />,
 }
 
-export const ThemeSwitcher = () => {
+export const ThemeSwitcher = memo(() => {
   const { theme, toggleTheme } = useTheme()
 
   return (
@@ -22,4 +23,4 @@ export const ThemeSwitcher = () => {
       </Button>
     </div>
   )
-}
+})

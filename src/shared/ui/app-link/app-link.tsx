@@ -1,11 +1,11 @@
-import { type FC } from 'react'
+import { memo, type FC } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 import { classNames } from 'shared/helpers'
 
 import styles from './app-link.module.scss'
 import { type AppLinkProps, AppLinkTheme } from './app-link.types'
 
-export const AppLink: FC<AppLinkProps> = (props) => {
+export const AppLink = memo((props: AppLinkProps) => {
   const { to, className, theme = AppLinkTheme.PRIMARY, children } = props
 
   return (
@@ -16,4 +16,4 @@ export const AppLink: FC<AppLinkProps> = (props) => {
       {children}
     </Link>
   )
-}
+})

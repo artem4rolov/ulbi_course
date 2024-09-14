@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { ButtonTheme } from 'shared/ui/button/button.types'
@@ -14,7 +14,7 @@ interface NavbarProps {
   className?: string
 }
 
-export const Navbar = (props: NavbarProps) => {
+export const Navbar = memo((props: NavbarProps) => {
   const { className } = props
   const dispatch = useDispatch()
   const { t } = useTranslation('translation')
@@ -50,4 +50,4 @@ export const Navbar = (props: NavbarProps) => {
       </div>
     </div>
   )
-}
+})

@@ -8,7 +8,14 @@
     { "id": "2", "text": "another comment about post 1", "postId": "1" }
   ],
   "profile": {
-    "name": "typicode"
+    "firstname": "Артем",
+    "lastname": "Фролов",
+    "age": 28,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Volgograd",
+    "username": "admin",
+    "avatar": "https://img.freepik.com/premium-vector/funny-cartoon-moose_6996-1314.jpg" 
   },
   "users": [
     {

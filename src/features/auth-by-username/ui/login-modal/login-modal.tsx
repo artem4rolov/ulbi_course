@@ -26,7 +26,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
     >
       <Text title={t('authForm')} />
       <Suspense fallback={<Loader />}>
-        <LoginFormAsync />
+        <LoginFormAsync onSuccess={() => setIsOpen(false)} />
       </Suspense>
     </Modal>
   )

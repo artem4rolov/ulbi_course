@@ -1,23 +1,18 @@
-import { useState } from 'react'
-import {
-  AppLink,
-  AppLinkTheme,
-  Button,
-  classNames,
-  LangSwitcher,
-  ThemeSwitcher,
-} from 'shared'
-import { AboutUsIcon, GoHomeIcon } from 'shared/assets'
+import { memo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Button, classNames, LangSwitcher, ThemeSwitcher } from 'shared'
+
+import { ButtonSize, ButtonTheme } from 'shared/ui/button/button.types'
+import { sidebarItemsList } from '../model/items'
+import { SidebarItem } from './sidebar-item/sidebar-item'
 
 import styles from './sidebar.module.scss'
-import { ButtonSize, ButtonTheme } from 'shared/ui/button/button.types'
-import { useTranslation } from 'react-i18next'
 
 interface SidebarProps {
   className?: string
 }
 
-export const Sidebar = (props: SidebarProps) => {
+export const Sidebar = memo((props: SidebarProps) => {
   const { t } = useTranslation('translation')
   const [collapsed, setCollapsed] = useState(false)
 
@@ -36,14 +31,9 @@ export const Sidebar = (props: SidebarProps) => {
             : styles['sidebar-links-collapsed']
         }
       >
-        <AppLink theme={AppLinkTheme.PRIMARY_INVERTED} to="/about">
-          <AboutUsIcon />
-          {!collapsed && t('navLinkAboutUsPage')}
-        </AppLink>
-        <AppLink theme={AppLinkTheme.PRIMARY_INVERTED} to="/">
-          <GoHomeIcon />
-          {!collapsed && t('navLinkMainPage')}
-        </AppLink>
+        {sidebarItemsList.map((link) => (
+          <SidebarItem key={link.route} item={link} collapsed={collapsed} />
+        ))}
       </div>
       <div
         className={
@@ -68,4 +58,4 @@ export const Sidebar = (props: SidebarProps) => {
       </div>
     </div>
   )
-}
+})

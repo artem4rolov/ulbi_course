@@ -6,6 +6,7 @@ import {
 } from '@reduxjs/toolkit'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { CounterSchema } from 'entities/counter'
+import { ProfileSchema } from 'entities/profile'
 import { UserSchema } from 'entities/user'
 import { AuthSchema } from 'features/auth-by-username'
 
@@ -15,6 +16,7 @@ export interface StoreSchema {
 
   // Асинхронные редюсеры
   auth?: AuthSchema
+  profile?: ProfileSchema
 }
 
 export type StateSchemaKey = keyof StoreSchema

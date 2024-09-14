@@ -1,5 +1,5 @@
 import { FC, memo, useCallback } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import { useTranslation } from 'react-i18next'
 import {
@@ -9,7 +9,13 @@ import {
 import { loginByUserName } from 'features/auth-by-username/services/auth-service'
 import { ButtonSize, ButtonTheme } from 'shared/ui/button/button.types'
 import { Text } from 'shared/ui/text'
-import { Button, DynamicModuleLoader, Input, ReducersList } from 'shared'
+import {
+  Button,
+  DynamicModuleLoader,
+  Input,
+  ReducersList,
+  useAppDispatch,
+} from 'shared'
 
 import styles from './login-form.module.scss'
 
@@ -22,13 +28,14 @@ import {
 
 export interface LoginFormProps {
   className?: string
+  onSuccess: () => void
 }
 
 const initialReducers: Pick<ReducersList, 'auth'> = {
   auth: authByUserNameReducer,
 }
 
-const LoginForm: FC<LoginFormProps> = memo(() => {
+const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
   const { t } = useTranslation('translation')
 
   const error = useSelector(getAuthError)
@@ -36,7 +43,7 @@ const LoginForm: FC<LoginFormProps> = memo(() => {
   const password = useSelector(getAuthPassword)
   const username = useSelector(getAuthUsername)
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const onChangeUserName = useCallback(
     (value: string) => {
@@ -52,9 +59,12 @@ const LoginForm: FC<LoginFormProps> = memo(() => {
     [dispatch],
   )
 
-  const onSubmit = useCallback(() => {
-    dispatch(loginByUserName({ username, password }))
-  }, [dispatch, username, password])
+  const onSubmit = useCallback(async () => {
+    const result = await dispatch(loginByUserName({ username, password }))
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [onSuccess, dispatch, username, password])
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
@@ -76,7 +86,7 @@ const LoginForm: FC<LoginFormProps> = memo(() => {
         <Button
           theme={ButtonTheme.SOLID}
           size={ButtonSize.BUTTON_SIZE_M}
-          onClick={onSubmit}
+          onClick={onSubmit as () => void}
           disabled={isLoading}
         >
           {t('signInButton')}
