@@ -5,10 +5,12 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
+import { AxiosInstance } from 'axios'
 import { CounterSchema } from 'entities/counter'
 import { ProfileSchema } from 'entities/profile'
 import { UserSchema } from 'entities/user'
 import { AuthSchema } from 'features/auth-by-username'
+import { NavigateOptions, To } from 'react-router-dom'
 
 export interface StoreSchema {
   counter: CounterSchema
@@ -30,4 +32,14 @@ export interface ReducerManager {
 
 export interface ReduxStoreWithManager extends ToolkitStore<StoreSchema> {
   reducerManager: ReducerManager
+}
+
+export interface ThunkExtraArgs {
+  api: AxiosInstance
+  navigate: (to: To, options?: NavigateOptions) => void
+}
+
+export interface ThunkConfig<T> {
+  rejectValue: T
+  extra: ThunkExtraArgs
 }

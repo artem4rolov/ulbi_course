@@ -16,7 +16,8 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     new ProgressPlugin(),
     new MiniCssExtractPlugin(),
     new DefinePlugin({
-      __IS_DEV__: options.isDev,
+      __IS_DEV__: JSON.parse(JSON.stringify(options.isDev)),
+      __API_URL__: JSON.stringify(options.apiUrl),
     }),
   ]
 

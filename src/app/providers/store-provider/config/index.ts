@@ -1,2 +1,2 @@
 export { createReduxStore } from './store'
-export { StoreSchema } from './state-schema.types'
+export { StoreSchema, ThunkExtraArgs, ThunkConfig } from './state-schema.types'

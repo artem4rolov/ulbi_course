@@ -8,14 +8,16 @@ import './shared/config/i18n/i18n'
 import { StoreProvider } from 'app/providers/store-provider'
 
 render(
-  <StoreProvider>
-    <ErrorBoundary>
-      <BrowserRouter>
+  // чтобы достучаться до функции navigate из thunk,
+  // провайдер стора должен быть ниже по уровню вложенности, чем провайдер роутинга
+  <BrowserRouter>
+    <StoreProvider>
+      <ErrorBoundary>
         <ThemeContextProvider>
           <App />
         </ThemeContextProvider>
-      </BrowserRouter>
-    </ErrorBoundary>
-  </StoreProvider>,
+      </ErrorBoundary>
+    </StoreProvider>
+  </BrowserRouter>,
   document.getElementById('root'),
 )

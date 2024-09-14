@@ -1,13 +1,14 @@
-declare module "*.scss" {
-  const content: Record<string, string>;
-  export default content;
+declare module '*.scss' {
+  const content: Record<string, string>
+  export default content
 }
 
 declare module '*.svg' {
-  import React from 'react';
+  import React from 'react'
 
-  const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
-  export default SVG;
+  const SVG: React.VFC<React.SVGProps<SVGSVGElement>>
+  export default SVG
 }
 
-declare const __IS_DEV__: boolean;
+declare const __IS_DEV__: boolean
+declare const __API_URL__: string

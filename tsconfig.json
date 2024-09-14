@@ -46,6 +46,7 @@
     "./src/**/*.ts",
     "./src/**/*.tsx",
     "./src/index.tsx",
-    "declaration.d.ts"
+    "declaration.d.ts",
+    "webpack.config.ts"
   ]
 }
