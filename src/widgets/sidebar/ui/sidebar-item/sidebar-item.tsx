@@ -5,7 +5,7 @@ import styles from './sidebar-item.module.scss'
 import { memo } from 'react'
 
 type ISidebarItemProps = {
-  item?: SidebarItemType
+  item: SidebarItemType
   collapsed: boolean
 }
 

@@ -14,7 +14,7 @@ export const Text: FC<ITextProps> = ({ title, text, className, variant }) => {
     <div
       className={classNames(styles['text-wrapper'], {}, [
         className,
-        styles[variant],
+        variant && styles[variant],
       ])}
     >
       {title && <p className={styles['text-title']}>{title}</p>}

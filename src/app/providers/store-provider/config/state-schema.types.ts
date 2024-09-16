@@ -1,6 +1,7 @@
 import {
   AnyAction,
   CombinedState,
+  Dispatch,
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit'
@@ -36,7 +37,7 @@ export interface ReduxStoreWithManager extends ToolkitStore<StoreSchema> {
 
 export interface ThunkExtraArgs {
   api: AxiosInstance
-  navigate: (to: To, options?: NavigateOptions) => void
+  navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {

@@ -6,7 +6,7 @@ describe('тест селектора для Auth Slice', () => {
   test('возврат error из слайса Auth', () => {
     const state: DeepPartial<StoreSchema> = {
       auth: { error: 'test error' },
-    }
+    } as StoreSchema
 
     expect(getAuthError(state as StoreSchema)).toEqual('test error')
   })

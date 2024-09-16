@@ -1,7 +1,7 @@
-import { DeepPartial } from '@reduxjs/toolkit'
 import { authByUserNameActions, authByUserNameReducer } from './auth-slice'
 import { AuthSchema } from '../types/auth.types'
 import { loginByUserName } from 'features/auth-by-username/services/auth-service'
+import { DeepPartial } from 'shared/types'
 
 describe('тест селекторов для слайса authByUserName', () => {
   test('изменение username', () => {

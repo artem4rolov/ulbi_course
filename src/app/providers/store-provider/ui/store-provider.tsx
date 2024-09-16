@@ -1,9 +1,9 @@
-import { DeepPartial } from '@reduxjs/toolkit'
 import { FC } from 'react'
 import { Provider } from 'react-redux'
 import { StoreSchema } from '../config'
 import { createReduxStore } from '../config/store'
 import { useNavigate } from 'react-router-dom'
+import { DeepPartial } from 'shared/types'
 
 interface StoreProviderProps {
   children?: React.ReactNode

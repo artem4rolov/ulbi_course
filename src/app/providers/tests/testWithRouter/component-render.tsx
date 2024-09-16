@@ -4,8 +4,8 @@ import { I18nextProvider } from 'react-i18next'
 import { is18nForTests } from 'shared/config/i18n/i18nForTests'
 import { MemoryRouter } from 'react-router-dom'
 import { StoreProvider } from 'app/providers/store-provider'
-import { DeepPartial } from '@reduxjs/toolkit'
 import { StoreSchema } from 'app/providers/store-provider/config'
+import { DeepPartial } from 'shared/types'
 
 interface TestWithTranslationAndRouterProps {
   route?: string

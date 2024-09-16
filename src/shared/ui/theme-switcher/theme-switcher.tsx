@@ -13,14 +13,16 @@ export const ThemeSwitcher = memo(() => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <div>
-      <Button
-        theme={ButtonTheme.LINK}
-        size={ButtonSize.BUTTON_SIZE_M}
-        onClick={toggleTheme}
-      >
-        {SwitchIcon[theme]}
-      </Button>
-    </div>
+    theme && (
+      <div>
+        <Button
+          theme={ButtonTheme.LINK}
+          size={ButtonSize.BUTTON_SIZE_M}
+          onClick={toggleTheme}
+        >
+          {SwitchIcon[theme]}
+        </Button>
+      </div>
+    )
   )
 })

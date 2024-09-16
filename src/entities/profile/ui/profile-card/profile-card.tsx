@@ -1,5 +1,5 @@
-import { useTransition } from 'react'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 
 import { getProfileData } from 'entities/profile/model/selectors/get-profile-data'
 import { getProfileError } from 'entities/profile/model/selectors/get-profile-error'
@@ -15,7 +15,7 @@ interface ProfileCard {
 }
 
 export const ProfileCard = ({ className }: ProfileCard) => {
-  const { t } = useTransition('profile')
+  const { t } = useTranslation('profile')
   const profileData = useSelector(getProfileData)
   const profileError = useSelector(getProfileError)
   const isProfileLoading = useSelector(getProfileIsLoading)

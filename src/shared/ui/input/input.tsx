@@ -12,7 +12,7 @@ export const Input = memo((props: InputProps) => {
   const [isFocused, setIsFocused] = useState(false)
 
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange(e.target.value)
+    onChange?.(e.target.value)
     setCuretPosition(e.target.value.length)
   }
 
@@ -22,10 +22,10 @@ export const Input = memo((props: InputProps) => {
   }
 
   useEffect(() => {
-    if (isFocused) {
+    if (isFocused && inputRef.current) {
       inputRef.current.focus()
     }
-  }, [isFocused])
+  }, [isFocused, inputRef])
 
   return (
     <div

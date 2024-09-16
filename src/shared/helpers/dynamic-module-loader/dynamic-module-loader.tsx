@@ -9,9 +9,6 @@ import { useDispatch, useStore } from 'react-redux'
 export type ReducersList = {
   [name in StateSchemaKey]: Reducer
 }
-
-type ReducerListEntry = [StateSchemaKey, Reducer]
-
 interface IDynamicModuleLoaderProps {
   reducers: Partial<ReducersList>
   removeAfterUnmount?: boolean
@@ -27,21 +24,17 @@ export const DynamicModuleLoader: FC<
 
   useEffect(() => {
     // при маунте асинхронного компонента, подтягиваем его редюсер
-    Object.entries(reducers).forEach(
-      ([reducerKey, reducer]: ReducerListEntry) => {
-        store.reducerManager.add(reducerKey, reducer)
-        dispatch({ type: `add ${reducerKey} reducer` })
-      },
-    )
+    Object.entries(reducers).forEach(([reducerKey, reducer]) => {
+      store.reducerManager.add(reducerKey as StateSchemaKey, reducer)
+      dispatch({ type: `add ${reducerKey} reducer` })
+    })
 
     return () => {
       if (removeAfterUnmount) {
-        Object.entries(reducers).forEach(
-          ([reducerKey, reducer]: ReducerListEntry) => {
-            store.reducerManager.remove(reducerKey)
-            dispatch({ type: `remove ${reducerKey} reducer` })
-          },
-        )
+        Object.entries(reducers).forEach(([reducerKey, reducer]) => {
+          store.reducerManager.remove(reducerKey as StateSchemaKey)
+          dispatch({ type: `remove ${reducerKey} reducer` })
+        })
       }
     }
   }, [])

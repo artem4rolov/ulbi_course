@@ -1,9 +1,9 @@
-type Mods = Record<string, string | boolean>
+type Mods = Record<string, string | boolean | null | undefined>
 
 export function classNames(
   cls?: string,
   mods: Mods = {},
-  additional: string[] | undefined = [],
+  additional: Array<string | undefined> = [],
 ): string {
   return [
     // главный класс
