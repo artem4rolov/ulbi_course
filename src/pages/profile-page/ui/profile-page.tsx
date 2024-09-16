@@ -1,7 +1,7 @@
-import { profileReducer } from 'entities/profile'
-import { Counter } from '../../../entities/counter/ui/counter'
+import { fetchProfileData, ProfileCard, profileReducer } from 'entities/profile'
+import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DynamicModuleLoader, Input, ReducersList } from 'shared'
+import { DynamicModuleLoader, ReducersList, useAppDispatch } from 'shared'
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -9,10 +9,17 @@ const reducers: ReducersList = {
 
 const ProfilePage = () => {
   const { t } = useTranslation('main-page')
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchProfileData())
+  }, [dispatch])
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div>Profile page</div>
+      <div>
+        <ProfileCard />
+      </div>
     </DynamicModuleLoader>
   )
 }
