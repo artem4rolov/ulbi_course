@@ -32,6 +32,10 @@
       pointer-events: none;
     }
 
+    .readOnly {
+      opacity: 0.5;
+    }
+
     @keyframes animate-caret {
       0% {
         opacity: 0;

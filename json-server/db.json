@@ -1,21 +1,37 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "profile": {
-    "firstname": "Артем",
-    "lastname": "Фролов",
+    "firstname": "Артем321455",
+    "lastname": "Фролов123",
     "age": 28,
-    "currency": "RUB",
+    "currency": "EUR",
     "country": "Russia",
-    "city": "Volgograd",
+    "city": "Volgograd123",
     "username": "admin",
-    "avatar": "https://img.freepik.com/premium-vector/funny-cartoon-moose_6996-1314.jpg" 
+    "avatar": "https://img.freepik.com/premium-vector/funny-cartoon-moose_6996-1314.jpg"
   },
   "users": [
     {

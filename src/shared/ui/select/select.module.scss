@@ -1,0 +1,23 @@
+.select {
+  &-wrapper {
+    display: flex;
+  }
+
+  &-label {
+    margin-right: 5px;
+  }
+
+  &-component {
+    background: none;
+    outline: none;
+    color: var(--primary-text-color);
+    padding: 2px 10px 2px 2px;
+    border: 1px solid var(--primary-text-color);
+  }
+
+  &-option {
+    color: var(--inverted-primary-color);
+    background: var(--inverted-bg-color);
+    border-radius: 0;
+  }
+}

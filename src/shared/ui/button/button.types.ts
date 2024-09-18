@@ -1,6 +1,7 @@
 export enum ButtonTheme {
   OUTLINE = 'outline',
   OUTLINE_INVERTED = 'outline_inverted',
+  OUTLINE_RED = 'outline_red',
   SOLID = 'solid',
   SOLID_INVERTED = 'solid_inverted',
   LINK = 'link',

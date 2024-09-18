@@ -2,8 +2,14 @@
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
 
-  &-header {
+  &-editing-mode {
+    border: 2px solid var(--inverted-primary-color);
+  }
+
+  &-avatar-wrapper {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &-content {
@@ -13,8 +19,12 @@
   &-input {
     margin-top: 10px;
   }
+}
 
-  &-edit-button {
-    margin-left: auto;
-  }
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
 }

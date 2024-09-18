@@ -7,12 +7,30 @@ interface ITextProps {
   text?: string
   className?: string
   variant?: 'error'
+  align?: TextAlign
 }
 
-export const Text: FC<ITextProps> = ({ title, text, className, variant }) => {
+export enum TextAlign {
+  RIGHT = 'right',
+  LEFT = 'left',
+  CENTER = 'center',
+}
+
+export const Text: FC<ITextProps> = ({
+  title,
+  text,
+  className,
+  variant,
+  align = TextAlign.LEFT,
+}) => {
+  const mods = {
+    [styles[variant!]]: true,
+    [styles[align]]: true,
+  }
+
   return (
     <div
-      className={classNames(styles['text-wrapper'], {}, [
+      className={classNames(styles['text-wrapper'], mods, [
         className,
         variant && styles[variant],
       ])}
