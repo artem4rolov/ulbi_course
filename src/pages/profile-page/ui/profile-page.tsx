@@ -4,14 +4,16 @@ import {
   getProfileForm,
   getProfileIsLoading,
   getProfileReadOnly,
+  getProfileValidateErrors,
   profileActions,
   ProfileCard,
   profileReducer,
+  ValidateProfileError,
 } from 'entities/profile'
 import { useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { DynamicModuleLoader, ReducersList, useAppDispatch } from 'shared'
+import { DynamicModuleLoader, ReducersList, Text, useAppDispatch } from 'shared'
 import { ProfilePageHeader } from './profile-page-header/profile-page-header'
 import { Currency } from 'entities/currency'
 import { Country } from 'entities/country'
@@ -21,13 +23,22 @@ const reducers: ReducersList = {
 } as ReducersList
 
 const ProfilePage = () => {
-  const { t } = useTranslation('main-page')
+  const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
 
   const profileForm = useSelector(getProfileForm)
   const profileError = useSelector(getProfileError)
   const isProfileLoading = useSelector(getProfileIsLoading)
   const readOnly = useSelector(getProfileReadOnly)
+  const profileValidateErrors = useSelector(getProfileValidateErrors)
+
+  const validateErrorsTraslates = {
+    [ValidateProfileError.INCORRECT_AGE]: `${t('incorrect_age')}`,
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('incorrect_country'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: `${t('incorrectUserData')}`,
+    [ValidateProfileError.NO_DATA]: t('no_user_data'),
+    [ValidateProfileError.SERVER_ERROR]: t('server_error'),
+  }
 
   const onChangeFirstName = useCallback(
     (value: string) => {
@@ -79,12 +90,26 @@ const ProfilePage = () => {
   )
 
   useEffect(() => {
-    dispatch(fetchProfileData())
+    // для среды сторибука и тестирования этот запрос не нужен
+    if (__PROJECT__ === 'frontend') {
+      dispatch(fetchProfileData())
+    }
   }, [dispatch])
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <ProfilePageHeader />
+      {profileValidateErrors.length ? (
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {profileValidateErrors.map((error) => (
+            <Text
+              key={error}
+              variant="error"
+              text={validateErrorsTraslates[error]}
+            />
+          ))}
+        </div>
+      ) : null}
       <div>
         <ProfileCard
           data={profileForm}

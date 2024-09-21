@@ -45,7 +45,8 @@ const config: Config = {
     },
     globals: {
         __IS_DEV__: true,
-        __API_URL__: ''
+        __API_URL__: '',
+        __PROJECT__: 'jest'
     },
     // An array of regexp pattern strings used to skip coverage collection
     // coveragePathIgnorePatterns: [

@@ -1,0 +1,8 @@
+{
+    "incorrect_age": "Incorrect age",
+    "incorrect_country": "Incorrect country",
+    "incorrect_user_data": "Incorrect user first or last name",
+    "no_user_data": "Cannot access to user info",
+    "server_error": "Server error. Please try again later" 
+}
+  

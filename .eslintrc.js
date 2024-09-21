@@ -69,4 +69,9 @@ module.exports = {
     'prefer-const': 'warn',
   },
   ignorePatterns: ['./src/index.tsx'],
+  global: {
+    __IS_DEV__: true,
+    __API_URL__: true,
+    __PROJECT__: true,
+  }
 }

@@ -1,4 +1,4 @@
-import webpack, { RuleSetRule } from 'webpack';
+import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import path from 'path';
 import {cssLoader}  from '../build/loaders/css-loader';
 import { PathsType } from '../build/types';
@@ -28,6 +28,12 @@ export default ({ config }: {config: webpack.Configuration}) => {
         use: ['@svgr/webpack'],
     });
     config!.module!.rules!.push(cssLoader(true));
+
+    config.plugins?.push(new DefinePlugin({
+        __IS_DEV__: JSON.parse(JSON.stringify(true)),
+        __API_URL__: JSON.stringify(''),
+        __PROJECT__: JSON.stringify('storybook'),
+    }))
 
     return config;
 };

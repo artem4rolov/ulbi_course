@@ -1,7 +1,6 @@
 import {
   AnyAction,
   CombinedState,
-  Dispatch,
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit'
