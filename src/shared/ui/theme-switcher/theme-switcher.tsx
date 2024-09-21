@@ -20,7 +20,10 @@ export const ThemeSwitcher = memo(() => {
           size={ButtonSize.BUTTON_SIZE_M}
           onClick={toggleTheme}
         >
-          {SwitchIcon[theme]}
+          {
+            //@ts-ignore
+            SwitchIcon[theme]
+          }
         </Button>
       </div>
     )
