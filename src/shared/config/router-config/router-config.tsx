@@ -6,7 +6,7 @@ import {
 import { NotFoundPage } from 'pages/not-found-page'
 import { type RouteProps } from 'react-router'
 
-type AppRoutesProps = RouteProps & {
+export type AppRoutesProps = RouteProps & {
   authOnly?: boolean
 }
 

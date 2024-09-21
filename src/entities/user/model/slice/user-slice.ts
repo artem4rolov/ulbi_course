@@ -4,6 +4,7 @@ import { LOCAL_STORAGE_USER_KEY } from 'shared'
 
 const initialState: UserSchema = {
   authData: undefined,
+  _inited: false,
 }
 
 export const userSlice = createSlice({
@@ -12,6 +13,7 @@ export const userSlice = createSlice({
   reducers: {
     logout: (state: UserSchema) => {
       state.authData = undefined
+      state._inited = false
       localStorage.removeItem(LOCAL_STORAGE_USER_KEY)
     },
     setAuthData: (state: UserSchema, action: PayloadAction<User>) => {
@@ -22,6 +24,7 @@ export const userSlice = createSlice({
       if (user) {
         state.authData = JSON.parse(user)
       }
+      state._inited = true
     },
   },
 })

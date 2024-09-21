@@ -7,12 +7,14 @@ import { Router } from './providers'
 import './styles/index.scss'
 
 import '../shared/config/i18n/i18n'
-import { useDispatch } from 'react-redux'
-import { userActions } from 'entities/user'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUserInited, userActions } from 'entities/user'
 
 export const App = () => {
   const { theme } = useTheme()
   const dispatch = useDispatch()
+
+  const isUserInited = useSelector(getUserInited)
 
   useEffect(() => {
     dispatch(userActions.initAuthData())
@@ -29,7 +31,7 @@ export const App = () => {
       <Navbar />
       <div className={'app-content'}>
         <Sidebar />
-        <Router />
+        {isUserInited && <Router />}
       </div>
     </div>
   )
