@@ -30,6 +30,7 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
         '@typescript-eslint/no-explicit-any': 'warn',
+        '@typescript-eslint/unbound-method': 'warn',
         'react/no-children-prop': 'off',
         camelcase: 'off',
       },
@@ -69,9 +70,9 @@ module.exports = {
     'prefer-const': 'warn',
   },
   ignorePatterns: ['./src/index.tsx'],
-  global: {
-    __IS_DEV__: true,
-    __API_URL__: true,
-    __PROJECT__: true,
-  }
+  // global: {
+  //   __IS_DEV__: true,
+  //   __API_URL__: true,
+  //   __PROJECT__: true,
+  // }
 }

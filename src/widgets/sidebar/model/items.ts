@@ -1,5 +1,10 @@
 import { RouterPaths } from 'shared'
-import { AboutUsIcon, GoHomeIcon, ProfileIcon } from 'shared/assets'
+import {
+  AboutUsIcon,
+  ArticleIcon,
+  GoHomeIcon,
+  ProfileIcon,
+} from 'shared/assets'
 
 export type SidebarItemType = {
   route: string
@@ -15,6 +20,12 @@ export const sidebarItemsList: SidebarItemType[] = [
     route: RouterPaths.profile,
     text: 'Профиль',
     Icon: ProfileIcon,
+    authOnly: true,
+  },
+  {
+    route: RouterPaths.articles,
+    text: 'Статьи',
+    Icon: ArticleIcon,
     authOnly: true,
   },
 ]

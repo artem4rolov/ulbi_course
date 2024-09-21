@@ -14,6 +14,7 @@ export default function buildConfig(options: BuildOptions) {
       filename: '[name][contenthash].js',
       path: paths.output,
       clean: true,
+      publicPath: '/',
     },
     plugins: buildPlugins(options),
     module: buildLoaders(options),
