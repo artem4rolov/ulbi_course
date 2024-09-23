@@ -1,7 +1,7 @@
 export {
   createReduxStore,
   StoreSchema,
-  ThunkExtraArgs,
+  ThunkExtraArg,
   ThunkConfig,
 } from './config'
 export { AppDispatch } from './config/store'

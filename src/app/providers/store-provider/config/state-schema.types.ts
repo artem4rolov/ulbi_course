@@ -6,6 +6,7 @@ import {
 } from '@reduxjs/toolkit'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { AxiosInstance } from 'axios'
+import { ArticleDetailsSchema } from 'entities/article'
 import { CounterSchema } from 'entities/counter'
 import { ProfileSchema } from 'entities/profile'
 import { UserSchema } from 'entities/user'
@@ -19,6 +20,7 @@ export interface StoreSchema {
   // Асинхронные редюсеры
   auth?: AuthSchema
   profile?: ProfileSchema
+  articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StoreSchema
@@ -34,13 +36,13 @@ export interface ReduxStoreWithManager extends ToolkitStore<StoreSchema> {
   reducerManager: ReducerManager
 }
 
-export interface ThunkExtraArgs {
+export interface ThunkExtraArg {
   api: AxiosInstance
   navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {
   rejectValue: T
-  extra: ThunkExtraArgs
+  extra: ThunkExtraArg
   state: StoreSchema
 }

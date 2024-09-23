@@ -3,7 +3,7 @@
 
   height: calc(100vh - var(--navpanel-height));
 
-  transition: width 0.15s ease-in-out;
+  transition: width 0.3s ease-in-out;
 
   position: relative;
   display: flex;
@@ -46,6 +46,7 @@
   position: absolute;
   right: -40px;
   bottom: 40px;
+  z-index: 10;
 }
 
 .sidebar.collapsed {

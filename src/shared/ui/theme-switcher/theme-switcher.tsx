@@ -7,6 +7,7 @@ import { memo } from 'react'
 const SwitchIcon = {
   app_dark_theme: <DarkThemeIcon />,
   app_light_theme: <LightThemeIcon />,
+  app_orange_theme: <LightThemeIcon />,
 }
 
 export const ThemeSwitcher = memo(() => {
@@ -20,10 +21,7 @@ export const ThemeSwitcher = memo(() => {
           size={ButtonSize.BUTTON_SIZE_M}
           onClick={toggleTheme}
         >
-          {
-            //@ts-ignore
-            SwitchIcon[theme]
-          }
+          {SwitchIcon[theme]}
         </Button>
       </div>
     )

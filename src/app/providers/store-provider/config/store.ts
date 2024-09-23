@@ -5,25 +5,27 @@ import {
   Reducer,
 } from '@reduxjs/toolkit'
 import { StoreSchema } from './state-schema.types'
-import { counterReducer } from '../../../../entities/counter/model/slice/conter-slice'
-import { userReducer } from '../../../../entities/user/model/slice/user-slice'
+import { counterReducer } from 'entities/counter'
+import { userReducer } from 'entities/user'
 import { createReducerManager } from './reducer-manager'
 import { api } from 'shared/api'
 import { NavigateOptions, To } from 'react-router-dom'
-import { ThunkExtraArgs } from 'app/providers/store-provider'
+import { ThunkExtraArg } from './state-schema.types'
 
 export function createReduxStore(
   initialState?: StoreSchema,
+  asyncReducers?: ReducersMapObject<StoreSchema>,
   navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
   const reducers: ReducersMapObject<StoreSchema> = {
+    ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
   }
 
   const reducerManager = createReducerManager(reducers)
 
-  const extraArg: ThunkExtraArgs = {
+  const extraArg: ThunkExtraArg = {
     api: api,
     navigate,
   }

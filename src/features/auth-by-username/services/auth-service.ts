@@ -1,9 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
 import { AuthData } from '../model/types/auth.types'
 import { User, userActions } from 'entities/user'
 import { LOCAL_STORAGE_USER_KEY } from 'shared'
-import { ThunkConfig, ThunkExtraArgs } from 'app/providers/store-provider'
+import { ThunkConfig } from 'app/providers/store-provider'
 
 export const loginByUserName = createAsyncThunk<
   User,
