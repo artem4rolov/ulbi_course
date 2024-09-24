@@ -6,6 +6,7 @@ export enum ButtonTheme {
   SOLID_INVERTED = 'solid_inverted',
   LINK = 'link',
   LINK_INVERTED = 'link_inverted',
+  CLEAR = 'clear',
 }
 
 export enum ButtonSize {

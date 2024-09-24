@@ -38,7 +38,10 @@ export enum ArticleType {
   ECONOMICS = 'ECONOMICS',
 }
 
-type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock
+export type ArticleBlock =
+  | ArticleCodeBlock
+  | ArticleImageBlock
+  | ArticleTextBlock
 
 export interface ArticleSchema {
   id: string
@@ -48,5 +51,5 @@ export interface ArticleSchema {
   views: number
   createdAt: string
   type: ArticleType[]
-  blocks: ArticleBlock
+  blocks: ArticleBlock[]
 }

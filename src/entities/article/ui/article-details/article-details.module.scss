@@ -1,4 +1,20 @@
 .article-details {
+  &-avatar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &-block {
+    margin-top: 16px;
+  }
 }
 
 .avatar {

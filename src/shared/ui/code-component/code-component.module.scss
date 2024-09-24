@@ -1,0 +1,20 @@
+.code-component {
+  position: relative;
+  bottom: 1px solid var(--primary-text-color);
+  padding: 20px;
+  background: var(--code-bg);
+  width: 100%;
+  display: inline-block;
+
+  overflow: auto;
+
+  &-copy-btn {
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+
+  &-copy-icon path {
+    stroke: var(--primary-text-color);
+  }
+}

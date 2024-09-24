@@ -8,6 +8,7 @@ interface ITextProps {
   className?: string
   variant?: 'error'
   align?: TextAlign
+  size?: TextSize
 }
 
 export enum TextAlign {
@@ -16,16 +17,23 @@ export enum TextAlign {
   CENTER = 'center',
 }
 
+export enum TextSize {
+  M = 'size_m',
+  L = 'size_l',
+}
+
 export const Text: FC<ITextProps> = ({
   title,
   text,
   className,
   variant,
   align = TextAlign.LEFT,
+  size = TextSize.M,
 }) => {
   const mods = {
     [styles[variant!]]: true,
     [styles[align]]: true,
+    [styles[size]]: true,
   }
 
   return (
