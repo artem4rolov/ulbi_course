@@ -15,15 +15,15 @@ export const Avatar = ({ className, src, size, alt }: IAvatarProps) => {
 
   const style = useMemo<CSSProperties>(() => {
     return {
-      width: size || 100,
-      height: size || 100,
+      width: `${size || 100}px`,
+      height: `${size || 100}px`,
     }
   }, [size])
 
   return (
     <img
       src={src}
-      style={styles}
+      style={style}
       alt={alt}
       className={classNames(styles.avatar, mods, [className])}
     />

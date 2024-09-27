@@ -11,3 +11,5 @@ const ArticleDetailsPageAsync = lazy(() => {
 })
 
 export { ArticleDetailsPageAsync as ArticleDetailsPage }
+
+export * from './model/types/article-details-comment-schema.types'

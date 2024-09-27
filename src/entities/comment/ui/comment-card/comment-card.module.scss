@@ -1,0 +1,20 @@
+.comment-card {
+  &-wrapper {
+    padding: 10px;
+    border: 1px solid var(--primary-text-color);
+  }
+
+  &-user {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+
+    &-name {
+      margin-left: 10px;
+    }
+  }
+
+  &-text {
+    margin-top: 10px;
+  }
+}
