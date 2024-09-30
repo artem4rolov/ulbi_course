@@ -1,10 +1,10 @@
 import { AppLink, AppLinkTheme } from 'shared'
-import { SidebarItemType } from '../../model/items'
 
 import styles from './sidebar-item.module.scss'
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { getAuthData } from 'entities/user'
+import { SidebarItemType } from '../../model/types/sidebar.types'
 
 type ISidebarItemProps = {
   item: SidebarItemType

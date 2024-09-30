@@ -1,9 +1,10 @@
 import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 import { Button, classNames, LangSwitcher, ThemeSwitcher } from 'shared'
 
 import { ButtonSize, ButtonTheme } from 'shared/ui/button/button.types'
-import { sidebarItemsList } from '../model/items'
+import { getSidebarItems } from '../model/selectors/get-sidebar-items'
 import { SidebarItem } from './sidebar-item/sidebar-item'
 
 import styles from './sidebar.module.scss'
@@ -15,6 +16,8 @@ interface SidebarProps {
 export const Sidebar = memo((props: SidebarProps) => {
   const { t } = useTranslation('translation')
   const [collapsed, setCollapsed] = useState(false)
+
+  const sidebarItemsList = useSelector(getSidebarItems)
 
   return (
     <div
