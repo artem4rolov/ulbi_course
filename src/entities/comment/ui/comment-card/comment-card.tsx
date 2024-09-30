@@ -1,4 +1,12 @@
-import { Avatar, classNames, Skeleton, Text } from 'shared'
+import {
+  AppLink,
+  AppLinkTheme,
+  Avatar,
+  classNames,
+  RouterPaths,
+  Skeleton,
+  Text,
+} from 'shared'
 import { Comment } from '../../model/types/comment.types'
 import classes from './comment-card.module.scss'
 
@@ -33,22 +41,29 @@ export const CommentCard = (props: ICommentCardProps) => {
     )
   }
 
+  console.log(comment)
+
   return (
     <div
       className={classNames(classes['comment-card-wrapper'], {}, [className])}
     >
       <div className={classes['comment-card-user']}>
-        {comment.user.avatar && (
-          <Avatar
-            alt="comment user avatar"
-            src={comment.user.avatar}
-            size={30}
+        <AppLink
+          theme={AppLinkTheme.USTYLED}
+          to={`${RouterPaths.profile}${comment.user.id}`}
+        >
+          {comment.user.avatar && (
+            <Avatar
+              alt="comment user avatar"
+              src={comment.user.avatar}
+              size={30}
+            />
+          )}
+          <Text
+            className={classes['comment-card-user-name']}
+            title={comment.user.username}
           />
-        )}
-        <Text
-          className={classes['comment-card-user-name']}
-          title={comment.user.name}
-        />
+        </AppLink>
       </div>
       <Text className={classes['comment-card-text']} text={comment.text} />
     </div>

@@ -24,7 +24,7 @@ export enum RouterNames {
 export const RouterPaths: Record<RouterNames, string> = {
   [RouterNames.MAIN]: '/',
   [RouterNames.ABOUT]: '/about',
-  [RouterNames.PROFILE]: '/profile',
+  [RouterNames.PROFILE]: '/profile/', // + id для просмотра пользователя
   [RouterNames.NOT_FOUND]: '*',
   [RouterNames.ARTICLES]: '/articles',
   [RouterNames.ARTICLE_DETAILS]: '/articles/', // + id для отдельной статьи
@@ -40,7 +40,7 @@ export const routerConfig: Record<RouterNames, AppRoutesProps> = {
     element: <AboutPage />,
   },
   [RouterNames.PROFILE]: {
-    path: RouterPaths.profile,
+    path: `${RouterPaths.profile}:id`,
     element: <ProfilePage />,
     authOnly: true,
   },

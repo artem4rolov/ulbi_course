@@ -17,6 +17,7 @@ import { DynamicModuleLoader, ReducersList, Text, useAppDispatch } from 'shared'
 import { ProfilePageHeader } from './profile-page-header/profile-page-header'
 import { Currency } from 'entities/currency'
 import { Country } from 'entities/country'
+import { useParams } from 'react-router-dom'
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -31,6 +32,7 @@ const ProfilePage = () => {
   const isProfileLoading = useSelector(getProfileIsLoading)
   const readOnly = useSelector(getProfileReadOnly)
   const profileValidateErrors = useSelector(getProfileValidateErrors)
+  const { id } = useParams<{ id: string }>()
 
   const validateErrorsTraslates = {
     [ValidateProfileError.INCORRECT_AGE]: `${t('incorrect_age')}`,
@@ -92,9 +94,11 @@ const ProfilePage = () => {
   useEffect(() => {
     // для среды сторибука и тестирования этот запрос не нужен
     if (__PROJECT__ === 'frontend') {
-      dispatch(fetchProfileData())
+      if (id) {
+        dispatch(fetchProfileData(id))
+      }
     }
-  }, [dispatch])
+  }, [dispatch, id])
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

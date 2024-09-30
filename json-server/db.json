@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -93,13 +95,37 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "aereresadasdasd",
+      "id": "0FnEiAh"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "comment from user",
+      "id": "vjhxxES"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "12345",
+      "id": "JH24hIc"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "12345 test!",
+      "id": "2DaNnw8"
     }
   ],
   "users": [
@@ -115,17 +141,31 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
+    },
+    {
+      "id": "2",
+      "firstname": "DAR GORA",
+      "lastname": "DAR",
+      "age": 12,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "DAR GORA",
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
+    }
+  ]
 }

@@ -6,3 +6,4 @@ export {
   ArticleType,
   ArticleBlockType,
 } from './model/types/article.types'
+export { getArticleDetailsData } from './model/selectors/get-article-details-data'

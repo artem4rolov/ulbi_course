@@ -3,6 +3,13 @@ a {
   text-decoration: none;
 }
 
+.unstyled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 .primary {
   color: var(--primary-text-color);
   display: flex;

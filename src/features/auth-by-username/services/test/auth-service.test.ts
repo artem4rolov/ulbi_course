@@ -53,7 +53,7 @@ describe('тест async thunk authByUserName', () => {
     expect(result.meta.requestStatus).toBe('fulfilled')
     // проверяем заполнение стейта после успешного запроса
     expect(thunk.dispatch).toHaveBeenCalledWith(
-      userActions.setAuthData({ name: 'test_user', id: '1' }),
+      userActions.setAuthData({ username: 'test_user', id: '1' }),
     )
     // диспатч выполняется: 1. вызов asyncThunk (loginByUserName) 2. заполнение стейта (userActions.setAuthData) 3. вернулся ответ (в builder async reducers пришел статус fullfilled)
     expect(thunk.dispatch).toHaveBeenCalledTimes(3)

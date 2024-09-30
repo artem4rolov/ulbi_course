@@ -125,7 +125,7 @@ export const ProfileCard = (props: ProfileCard) => {
         <Input
           key={'username'}
           value={data?.username}
-          type="number"
+          type="text"
           placeholder={t('Ваш никнейм')}
           className={styles['profile-data-input']}
           onChange={onChangeUserName}
@@ -134,7 +134,7 @@ export const ProfileCard = (props: ProfileCard) => {
         <Input
           key={'avatar'}
           value={data?.age}
-          type="number"
+          type="text"
           placeholder={t('Введите ссылку на аватар')}
           className={styles['profile-data-input']}
           onChange={onChangeAvatar}

@@ -1,5 +1,5 @@
-import { memo, type FC } from 'react'
-import { Link, LinkProps } from 'react-router-dom'
+import { memo } from 'react'
+import { Link } from 'react-router-dom'
 import { classNames } from 'shared/helpers'
 
 import styles from './app-link.module.scss'

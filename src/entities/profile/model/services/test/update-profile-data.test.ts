@@ -7,6 +7,7 @@ import { ValidateProfileError } from '../../type/profile'
 
 describe('тест async thunk updateProfileData', () => {
   const data = {
+    id: '1',
     firstname: 'Артем',
     lastname: 'Фролов',
     age: 28,

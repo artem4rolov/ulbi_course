@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -24,6 +24,8 @@ import {
   getArticleCommentsIsLoading,
 } from '../model/selectors/comments-selectors'
 import { fetchCommenteById } from '../model/services/fetchCommentsById'
+import { AddCommentForm } from 'features/add-comment-form'
+import { addCommentForArticle } from './../model/services/add-comment-for-article'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -46,6 +48,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     dispatch(fetchCommenteById(id))
   }, [])
 
+  const onSendComment = useCallback(
+    (text: string) => {
+      if (text) {
+        dispatch(addCommentForArticle(text))
+      }
+    },
+    [dispatch],
+  )
+
   if (!id) {
     return (
       <div className={styles.articleDetailsPage}>{t('Статья не найдена')}</div>
@@ -62,6 +73,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           className={styles['article-details-page-comments-title']}
           title="Комментарии"
         />
+        <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoading} />
       </div>
     </DynamicModuleLoader>

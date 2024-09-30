@@ -36,6 +36,8 @@ export const Text: FC<ITextProps> = ({
     [styles[size]]: true,
   }
 
+  console.log(title)
+
   return (
     <div
       className={classNames(styles['text-wrapper'], mods, [
