@@ -4,10 +4,11 @@ const ArticlesPageAsync = lazy(() => {
   return new Promise((res, rej) => {
     setTimeout(() => {
       res(null)
-    }, 1000)
+    }, 400)
   }).then(() => {
     return import('./ui/articles-page')
   })
 })
 
 export { ArticlesPageAsync as ArticlesPage }
+export { ArticlesPageSchema } from './model/types/article-page.types'

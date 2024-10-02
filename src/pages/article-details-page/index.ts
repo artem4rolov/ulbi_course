@@ -4,7 +4,7 @@ const ArticleDetailsPageAsync = lazy(() => {
   return new Promise((res, rej) => {
     setTimeout(() => {
       res(null)
-    }, 1000)
+    }, 400)
   }).then(() => {
     return import('./ui/article-details-page')
   })

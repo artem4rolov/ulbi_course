@@ -38,7 +38,7 @@ export const ArticleList = ({
     />
   )
 
-  if (!isLoading) {
+  if (isLoading) {
     return (
       <div
         className={classNames(classes['article-list'], {}, [

@@ -9,3 +9,4 @@ export {
 } from './model/types/article.types'
 export { getArticleDetailsData } from './model/selectors/get-article-details-data'
 export { ArticleList } from './ui/article-list/article-list'
+export { ArticleViewSelector } from './ui/article-view-selector/article-view-selector'
