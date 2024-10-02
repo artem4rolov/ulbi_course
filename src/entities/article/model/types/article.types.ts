@@ -1,3 +1,5 @@
+import { User } from 'entities/user'
+
 // типы для видов блоков (блок с изображением | с кодом | с текстом)
 export enum ArticleBlockType {
   CODE = 'CODE',
@@ -43,6 +45,11 @@ export type ArticleBlock =
   | ArticleImageBlock
   | ArticleTextBlock
 
+export enum ArticleView {
+  BIG = 'BIG',
+  SMALL = 'SMALL',
+}
+
 export interface ArticleSchema {
   id: string
   title: string
@@ -52,4 +59,5 @@ export interface ArticleSchema {
   createdAt: string
   type: ArticleType[]
   blocks: ArticleBlock[]
+  user: User
 }

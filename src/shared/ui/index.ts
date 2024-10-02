@@ -1,6 +1,7 @@
 export * from './app-link'
 export * from './avatar/avatar'
 export * from './code-component/code-component'
+export * from './card-component/card-component'
 export * from './theme-switcher'
 export * from './lang-switcher'
 export * from './button'

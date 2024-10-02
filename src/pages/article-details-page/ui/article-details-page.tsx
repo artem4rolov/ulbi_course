@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { ArticleDetails } from 'entities/article'
@@ -10,9 +10,11 @@ import {
 } from '../model/slices/article-details-comments-slice'
 
 import {
+  Button,
   classNames,
   DynamicModuleLoader,
   ReducersList,
+  RouterPaths,
   Text,
   useAppDispatch,
 } from 'shared'
@@ -26,6 +28,7 @@ import {
 import { fetchCommenteById } from '../model/services/fetchCommentsById'
 import { AddCommentForm } from 'features/add-comment-form'
 import { addCommentForArticle } from './../model/services/add-comment-for-article'
+import { ButtonTheme } from 'shared/ui/button/button.types'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -39,7 +42,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { t } = useTranslation('articles')
   const { id } = useParams<{ id: string }>()
   const { className } = props
+
+  const navigate = useNavigate()
   const dispatch = useAppDispatch()
+
   const comments = useSelector(getArticleComments.selectAll)
   const isLoading = useSelector(getArticleCommentsIsLoading)
   const errors = useSelector(getArticleCommentsErrors)
@@ -57,6 +63,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     [dispatch],
   )
 
+  const onBackToListArticle = useCallback(() => {
+    navigate(`${RouterPaths.articles}`)
+  }, [navigate])
+
   if (!id) {
     return (
       <div className={styles.articleDetailsPage}>{t('Статья не найдена')}</div>
@@ -68,6 +78,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
       <div
         className={classNames(styles['article-details-page'], {}, [className])}
       >
+        <Button
+          theme={ButtonTheme.OUTLINE_INVERTED}
+          onClick={onBackToListArticle}
+        >
+          Назад к списку статей
+        </Button>
         <ArticleDetails id={id} />
         <Text
           className={styles['article-details-page-comments-title']}

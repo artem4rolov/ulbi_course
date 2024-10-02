@@ -5,5 +5,7 @@ export {
   ArticleSchema,
   ArticleType,
   ArticleBlockType,
+  ArticleView,
 } from './model/types/article.types'
 export { getArticleDetailsData } from './model/selectors/get-article-details-data'
+export { ArticleList } from './ui/article-list/article-list'
