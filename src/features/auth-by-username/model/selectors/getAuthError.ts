@@ -1,3 +1,3 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getAuthError = (state: StoreSchema) => state?.auth?.error || ''
+export const getAuthError = (state: StateSchema) => state?.auth?.error || ''

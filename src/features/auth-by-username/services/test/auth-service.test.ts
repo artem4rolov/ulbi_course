@@ -4,7 +4,7 @@ import { TestAsyncThunk } from 'shared/helpers/tests/test-async-thunk/test-async
 
 describe('тест async thunk authByUserName', () => {
   // let dispatch: Dispatch
-  // let getState: () => StoreSchema
+  // let getState: () => StateSchema
 
   // beforeEach(() => {
   //   dispatch = jest.fn()

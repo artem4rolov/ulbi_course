@@ -1,3 +1,3 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getAuthData = (state: StoreSchema) => state.user.authData
+export const getAuthData = (state: StateSchema) => state.user.authData

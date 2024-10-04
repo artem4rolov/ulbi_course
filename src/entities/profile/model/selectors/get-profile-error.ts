@@ -1,4 +1,4 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getProfileError = (state: StoreSchema) =>
+export const getProfileError = (state: StateSchema) =>
   state?.profile?.error || ''

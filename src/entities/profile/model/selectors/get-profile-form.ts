@@ -1,3 +1,3 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getProfileForm = (state: StoreSchema) => state?.profile?.form
+export const getProfileForm = (state: StateSchema) => state?.profile?.form

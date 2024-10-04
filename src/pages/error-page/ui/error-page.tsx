@@ -1,4 +1,4 @@
-import { PageComponent } from 'shared/ui'
+import { PageComponent } from 'widgets'
 import styles from './error-page.module.scss'
 
 interface ErrorPageProps {

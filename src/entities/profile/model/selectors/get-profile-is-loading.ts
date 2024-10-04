@@ -1,4 +1,4 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getProfileIsLoading = (state: StoreSchema) =>
+export const getProfileIsLoading = (state: StateSchema) =>
   state?.profile?.isLoading

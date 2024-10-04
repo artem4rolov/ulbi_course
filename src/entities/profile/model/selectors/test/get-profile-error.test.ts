@@ -1,12 +1,12 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 import { getProfileError } from '../get-profile-error'
 
 describe('тест селектора для Profile Slice', () => {
   test('должен вернуть ошибку которая пришла в error', () => {
-    const state: DeepPartial<StoreSchema> = {
+    const state: DeepPartial<StateSchema> = {
       profile: { error: 'test error' },
-    } as StoreSchema
+    } as StateSchema
 
-    expect(getProfileError(state as StoreSchema)).toEqual('test error')
+    expect(getProfileError(state as StateSchema)).toEqual('test error')
   })
 })

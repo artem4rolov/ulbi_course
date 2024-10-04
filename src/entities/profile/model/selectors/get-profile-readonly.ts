@@ -1,4 +1,4 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getProfileReadOnly = (state: StoreSchema) =>
+export const getProfileReadOnly = (state: StateSchema) =>
   state?.profile?.readonly || false

@@ -2,29 +2,21 @@ import { memo, useCallback, useEffect } from 'react'
 import styles from './articles-page.module.scss'
 import { useTranslation } from 'react-i18next'
 import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/article'
-import {
-  DynamicModuleLoader,
-  PageComponent,
-  ReducersList,
-  useAppDispatch,
-} from 'shared'
+import { DynamicModuleLoader, ReducersList, useAppDispatch } from 'shared'
 import {
   articlePageActions,
   articlesPageReducer,
   getArticles,
 } from '../model/slice/article-page.slice'
-import { fetchArticleList } from '../model/service/fetch-article-list'
 import { useSelector } from 'react-redux'
 import {
   getArticlesPageErrors,
-  getArticlesPageHasMore,
-  getArticlesPageInited,
   getArticlesPageIsLoading,
-  getArticlesPageNumber,
   getArticlesPageView,
 } from '../model/selectors/articles-page.selectors'
 import { fetchNextArticlePage } from '../model/service/fetch-next-article-page'
 import { initArticlesPage } from '../model/service/init-articles-page'
+import { PageComponent } from 'widgets'
 
 interface ArticlesPageProps {
   className?: string
@@ -63,7 +55,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }
 
   return (
-    <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+    <DynamicModuleLoader removeAfterUnmount={false} reducers={reducers}>
       <PageComponent
         className={styles.articlesPage}
         onScrollEnd={onLoadNextPart}

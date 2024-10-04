@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 import { counterActions } from '../model/slice/conter-slice'
 
 export const Counter = () => {
   const dispatch = useDispatch()
-  const counterValue = useSelector((state: StoreSchema) => state.counter.value)
+  const counterValue = useSelector((state: StateSchema) => state.counter.value)
 
   const increment = () => {
     dispatch(counterActions.increment())

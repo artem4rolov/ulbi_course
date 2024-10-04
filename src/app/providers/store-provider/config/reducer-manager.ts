@@ -8,11 +8,11 @@ import {
   MountedReucers,
   ReducerManager,
   StateSchemaKey,
-  StoreSchema,
+  StateSchema,
 } from './state-schema.types'
 
 export function createReducerManager(
-  initialReducers: ReducersMapObject<StoreSchema>,
+  initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
   const reducers = { ...initialReducers }
 
@@ -24,7 +24,7 @@ export function createReducerManager(
   return {
     getReducerMap: () => reducers,
     // getMountedReducers: () => mounted
-    reduce: (state: StoreSchema, action: AnyAction) => {
+    reduce: (state: StateSchema, action: AnyAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state }
         for (const key of keysToRemove) {

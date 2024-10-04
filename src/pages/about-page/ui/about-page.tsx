@@ -1,6 +1,6 @@
 import { Counter } from 'entities/counter'
 import { useTranslation } from 'react-i18next'
-import { PageComponent } from 'shared/ui'
+import { PageComponent } from 'widgets/page-component'
 
 const AboutPage = () => {
   const { t } = useTranslation('about-us-page')

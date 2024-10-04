@@ -4,11 +4,11 @@ import { I18nextProvider } from 'react-i18next'
 import { is18nForTests } from 'shared/config/i18n/i18nForTests'
 import { MemoryRouter } from 'react-router-dom'
 import { StoreProvider } from 'app/providers/store-provider'
-import { StoreSchema } from 'app/providers/store-provider/config'
+import { StateSchema } from 'app/providers/store-provider/config'
 
 interface TestWithTranslationAndRouterProps {
   route?: string
-  initialState?: DeepPartial<StoreSchema>
+  initialState?: DeepPartial<StateSchema>
 }
 
 // wrapper для работы с компонентами, в которых есть перевод
