@@ -1,4 +1,4 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getAuthIsLoading = (state: StoreSchema) =>
+export const getAuthIsLoading = (state: StateSchema) =>
   state?.auth?.isLoading || false

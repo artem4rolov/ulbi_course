@@ -1,6 +1,6 @@
 export {
   createReduxStore,
-  StoreSchema,
+  StateSchema,
   ThunkExtraArg,
   ThunkConfig,
 } from './config'

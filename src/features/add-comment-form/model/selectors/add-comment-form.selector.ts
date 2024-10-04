@@ -1,6 +1,6 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getAddFormText = (state: StoreSchema) =>
+export const getAddFormText = (state: StateSchema) =>
   state?.addCommentForm?.text ?? ''
-export const getAddFormError = (state: StoreSchema) =>
+export const getAddFormError = (state: StateSchema) =>
   state?.addCommentForm?.error ?? ''

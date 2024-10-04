@@ -1,12 +1,12 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 import { getAuthUsername } from '../getAuthUsername'
 
 describe('тест селектора для Auth Slice', () => {
   test('возврат username из слайса Auth', () => {
-    const state: DeepPartial<StoreSchema> = {
+    const state: DeepPartial<StateSchema> = {
       auth: { username: 'test_user' },
-    } as StoreSchema
+    } as StateSchema
 
-    expect(getAuthUsername(state as StoreSchema)).toEqual('test_user')
+    expect(getAuthUsername(state as StateSchema)).toEqual('test_user')
   })
 })

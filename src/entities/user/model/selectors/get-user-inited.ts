@@ -1,3 +1,3 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getUserInited = (state: StoreSchema) => state.user._inited
+export const getUserInited = (state: StateSchema) => state.user._inited

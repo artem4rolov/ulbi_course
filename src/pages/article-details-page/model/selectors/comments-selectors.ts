@@ -1,6 +1,6 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getArticleCommentsIsLoading = (state: StoreSchema) =>
+export const getArticleCommentsIsLoading = (state: StateSchema) =>
   state.articleDetailsComments?.isLoading
-export const getArticleCommentsErrors = (state: StoreSchema) =>
+export const getArticleCommentsErrors = (state: StateSchema) =>
   state.articleDetailsComments?.error

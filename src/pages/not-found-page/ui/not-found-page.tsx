@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import { classNames, PageComponent } from 'shared'
+import { classNames } from 'shared'
+import { PageComponent } from 'widgets'
 import styles from './not-found-page.module.scss'
 
 interface NotFoundPageProps {

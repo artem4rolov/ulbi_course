@@ -13,7 +13,6 @@ import {
   Button,
   classNames,
   DynamicModuleLoader,
-  PageComponent,
   ReducersList,
   RouterPaths,
   Text,
@@ -30,6 +29,7 @@ import { fetchCommenteById } from '../model/services/fetchCommentsById'
 import { AddCommentForm } from 'features/add-comment-form'
 import { addCommentForArticle } from './../model/services/add-comment-for-article'
 import { ButtonTheme } from 'shared/ui/button/button.types'
+import { PageComponent } from 'widgets'
 
 interface ArticleDetailsPageProps {
   className?: string

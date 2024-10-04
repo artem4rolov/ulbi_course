@@ -1,4 +1,4 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getAuthPassword = (state: StoreSchema) =>
+export const getAuthPassword = (state: StateSchema) =>
   state?.auth?.password || ''

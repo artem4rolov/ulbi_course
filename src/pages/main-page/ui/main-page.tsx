@@ -1,6 +1,7 @@
 import { Counter } from '../../../entities/counter/ui/counter'
 import { useTranslation } from 'react-i18next'
-import { Input, PageComponent } from 'shared'
+import { Input } from 'shared'
+import { PageComponent } from 'widgets'
 
 export const MainPage = () => {
   const { t } = useTranslation('main-page')

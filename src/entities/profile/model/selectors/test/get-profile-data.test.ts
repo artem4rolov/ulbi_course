@@ -1,4 +1,4 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 import { getProfileData } from '../get-profile-data'
 
 describe('тест селектора для Profile Slice', () => {
@@ -15,15 +15,15 @@ describe('тест селектора для Profile Slice', () => {
   }
 
   test('должен вернуть данные профиля', () => {
-    const state: DeepPartial<StoreSchema> = {
+    const state: DeepPartial<StateSchema> = {
       profile: { data: data },
-    } as StoreSchema
+    } as StateSchema
 
-    expect(getProfileData(state as StoreSchema)).toEqual(data)
+    expect(getProfileData(state as StateSchema)).toEqual(data)
   })
   test('должен вернуть undefined при пустом сторе', () => {
-    const state: DeepPartial<StoreSchema> = {} as StoreSchema
+    const state: DeepPartial<StateSchema> = {} as StateSchema
 
-    expect(getProfileData(state as StoreSchema)).toEqual(undefined)
+    expect(getProfileData(state as StateSchema)).toEqual(undefined)
   })
 })

@@ -41,8 +41,6 @@ export const CommentCard = (props: ICommentCardProps) => {
     )
   }
 
-  console.log(comment)
-
   return (
     <div
       className={classNames(classes['comment-card-wrapper'], {}, [className])}

@@ -1,4 +1,4 @@
-import { StoreSchema } from 'app'
+import { StateSchema } from 'app'
 
-export const getProfileValidateErrors = (state: StoreSchema) =>
+export const getProfileValidateErrors = (state: StateSchema) =>
   state?.profile?.validateError || []
