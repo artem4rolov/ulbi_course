@@ -1,13 +1,13 @@
 import { memo, useCallback, useEffect } from 'react'
 import styles from './articles-page.module.scss'
 import { useTranslation } from 'react-i18next'
+import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/article'
 import {
-  ArticleList,
-  ArticleSchema,
-  ArticleView,
-  ArticleViewSelector,
-} from 'entities/article'
-import { DynamicModuleLoader, ReducersList, useAppDispatch } from 'shared'
+  DynamicModuleLoader,
+  PageComponent,
+  ReducersList,
+  useAppDispatch,
+} from 'shared'
 import {
   articlePageActions,
   articlesPageReducer,
@@ -17,9 +17,12 @@ import { fetchArticleList } from '../model/service/fetch-article-list'
 import { useSelector } from 'react-redux'
 import {
   getArticlesPageErrors,
+  getArticlesPageHasMore,
   getArticlesPageIsLoading,
+  getArticlesPageNumber,
   getArticlesPageView,
 } from '../model/selectors/articles-page.selectors'
+import { fetchNextArticlePage } from '../model/service/fetch-next-article-page'
 
 interface ArticlesPageProps {
   className?: string
@@ -36,26 +39,39 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading)
   const errors = useSelector(getArticlesPageErrors)
   const view = useSelector(getArticlesPageView)
+  // const hasMore = useSelector(getArticlesPageHasMore)
+  const page = useSelector(getArticlesPageNumber)
   const dispatch = useAppDispatch()
 
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlePageActions.setView(view))
   }, [])
 
-  useEffect(() => {
-    dispatch(fetchArticleList())
-    dispatch(articlePageActions.initState())
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlePage())
   }, [dispatch])
+
+  useEffect(() => {
+    dispatch(articlePageActions.initState())
+    dispatch(fetchArticleList({ page }))
+  }, [])
+
+  if (errors) {
+    return <>{errors}</>
+  }
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <div className={styles.articlesPage}>
+      <PageComponent
+        className={styles.articlesPage}
+        onScrollEnd={onLoadNextPart}
+      >
         <ArticleViewSelector
           view={view ?? ArticleView.BIG}
           onViewClick={onChangeView}
         />
         <ArticleList isLoading={isLoading} articles={articles} view={view} />
-      </div>
+      </PageComponent>
     </DynamicModuleLoader>
   )
 }

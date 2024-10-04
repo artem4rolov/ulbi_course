@@ -20,15 +20,8 @@ export const getArticleComments = commentsAdapter.getSelectors<StoreSchema>(
 const articleDetailsCommentsSlice = createSlice({
   name: 'articleDetailsCommentsSlice',
   initialState: commentsAdapter.getInitialState<ArticleDetailsCommentSchema>({
-    ids: ['1', '2'],
-    entities: {
-      '1': { id: '1', text: 'test', user: { id: '1', username: 'test user' } },
-      '2': {
-        id: '2',
-        text: 'test 2',
-        user: { id: '2', username: 'test user 2' },
-      },
-    },
+    ids: [],
+    entities: {},
     error: undefined,
     isLoading: false,
   }),

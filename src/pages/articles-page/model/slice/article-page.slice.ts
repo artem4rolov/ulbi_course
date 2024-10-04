@@ -21,29 +21,29 @@ export const getArticles = articlesAdapter.getSelectors<StoreSchema>(
 const articlesPageSlice = createSlice({
   name: 'articlesPageSlice',
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
-    // ids: ['1', '2'],
     ids: [],
-    entities: {
-      //   '1': { id: '1', text: 'test', user: { id: '1', username: 'test user' } },
-      //   '2': {
-      //     id: '2',
-      //     text: 'test 2',
-      //     user: { id: '2', username: 'test user 2' },
-      //   },
-    },
+    entities: {},
     error: undefined,
     isLoading: false,
     view: ArticleView.SMALL,
+    page: 1,
+    hasMore: true,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload
       localStorage.setItem(LOCAL_STORAGE_ARTICLE_VIEW_KEY, action.payload)
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload
+    },
     initState: (state) => {
-      state.view = localStorage.getItem(
+      const view = localStorage.getItem(
         LOCAL_STORAGE_ARTICLE_VIEW_KEY,
       ) as ArticleView
+
+      state.view = view
+      state.limit = view === ArticleView.BIG ? 4 : 9
     },
   },
   extraReducers: (builder) => {
@@ -56,7 +56,10 @@ const articlesPageSlice = createSlice({
         fetchArticleList.fulfilled,
         (state, action: PayloadAction<ArticleSchema[]>) => {
           state.isLoading = false
-          articlesAdapter.setAll(state, action.payload)
+          // при асинхронной подгрузке, добавляем данные в конец уже имеющихся, а не перезаписываем весь массив
+          // чтобы не спамить запросами при работе с IntersectionObserver
+          articlesAdapter.addMany(state, action.payload)
+          state.hasMore = action.payload.length > 0 ? true : false
         },
       )
       .addCase(fetchArticleList.rejected, (state, action) => {

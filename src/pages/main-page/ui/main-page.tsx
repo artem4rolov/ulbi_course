@@ -1,15 +1,15 @@
 import { Counter } from '../../../entities/counter/ui/counter'
 import { useTranslation } from 'react-i18next'
-import { Input } from 'shared'
+import { Input, PageComponent } from 'shared'
 
 export const MainPage = () => {
   const { t } = useTranslation('main-page')
 
   return (
-    <div>
+    <PageComponent>
       {t('mainPage')}
       <Counter />
       <Input placeholder="test" onChange={(value) => console.log(value)} />
-    </div>
+    </PageComponent>
   )
 }

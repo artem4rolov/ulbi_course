@@ -22,12 +22,12 @@ export const Router = memo(() => {
   }, [])
 
   return (
-    <div className="app-content-page">
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          {Object.values(routerConfig).map((route) => renderWithWrapper(route))}
-        </Routes>
-      </Suspense>
-    </div>
+    // <div className="app-content-page">
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        {Object.values(routerConfig).map((route) => renderWithWrapper(route))}
+      </Routes>
+    </Suspense>
+    // </div>
   )
 })

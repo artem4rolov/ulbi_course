@@ -28,7 +28,7 @@ export const Navbar = memo((props: NavbarProps) => {
 
   if (!authData) {
     return (
-      <div className={classNames(styles.navbar, {}, [className])}>
+      <header className={classNames(styles.navbar, {}, [className])}>
         <div>logo</div>
         <div className={classNames(styles['navbar-links'])}>
           <Button theme={ButtonTheme.LINK} onClick={() => setIsOpen(true)}>
@@ -36,18 +36,18 @@ export const Navbar = memo((props: NavbarProps) => {
           </Button>
         </div>
         <LoginModal isOpen={isOpen} setIsOpen={setIsOpen} />
-      </div>
+      </header>
     )
   }
 
   return (
-    <div className={classNames(styles.navbar, {}, [className])}>
+    <header className={classNames(styles.navbar, {}, [className])}>
       <div>logo</div>
       <div className={classNames(styles['navbar-links'])}>
         <Button theme={ButtonTheme.LINK} onClick={onLogout}>
           {t('logoutButton')}
         </Button>
       </div>
-    </div>
+    </header>
   )
 })

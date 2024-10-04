@@ -13,6 +13,7 @@ import {
   Button,
   classNames,
   DynamicModuleLoader,
+  PageComponent,
   ReducersList,
   RouterPaths,
   Text,
@@ -69,13 +70,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={styles.articleDetailsPage}>{t('Статья не найдена')}</div>
+      <PageComponent className={styles.articleDetailsPage}>
+        {t('Статья не найдена')}
+      </PageComponent>
     )
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div
+      <PageComponent
         className={classNames(styles['article-details-page'], {}, [className])}
       >
         <Button
@@ -91,7 +94,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoading} />
-      </div>
+      </PageComponent>
     </DynamicModuleLoader>
   )
 }

@@ -38,19 +38,6 @@ export const ArticleList = ({
     />
   )
 
-  if (isLoading) {
-    return (
-      <div
-        className={classNames(classes['article-list'], {}, [
-          className,
-          classes[view],
-        ])}
-      >
-        {getSkeletons(view)}
-      </div>
-    )
-  }
-
   return (
     <div
       className={classNames(classes['article-list'], {}, [
@@ -59,6 +46,7 @@ export const ArticleList = ({
       ])}
     >
       {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   )
 }
