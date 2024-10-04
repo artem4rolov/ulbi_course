@@ -1,4 +1,3 @@
-import { DeepPartial } from 'shared/types'
 import { ProfileSchema, ValidateProfileError } from '../../type/profile'
 import { profileActions, profileSlice } from '../profile-slice'
 import { Currency } from 'entities/currency'

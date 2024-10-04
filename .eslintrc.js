@@ -13,7 +13,7 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['./src/**/*.tsx', './src/**/*.ts'],
+      files: ['./src/**/*.tsx', './src/**/*.ts', 'declaration.d.ts'],
       rules: {
         '@typescript-eslint/semi': 'off',
         '@typescript-eslint/restrict-template-expressions': 'off',

@@ -31,11 +31,15 @@ export interface StoreSchema {
 
 export type StateSchemaKey = keyof StoreSchema
 
+export type MountedReucers = OptionalRecord<StateSchemaKey, boolean>
+
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StoreSchema>
   reduce: (state: StoreSchema, action: AnyAction) => CombinedState<StoreSchema>
   add: (key: StateSchemaKey, reducer: Reducer) => void
   remove: (key: StateSchemaKey) => void
+  // true - редюсер уже вмонтирован, false - еще не вмонтирован
+  // getMountedReducers: () => MountedReucers
 }
 
 export interface ReduxStoreWithManager extends ToolkitStore<StoreSchema> {
@@ -44,7 +48,7 @@ export interface ReduxStoreWithManager extends ToolkitStore<StoreSchema> {
 
 export interface ThunkExtraArg {
   api: AxiosInstance
-  navigate?: (to: To, options?: NavigateOptions) => void
+  // navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {

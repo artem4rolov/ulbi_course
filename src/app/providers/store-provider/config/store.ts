@@ -15,7 +15,7 @@ import { ThunkExtraArg } from './state-schema.types'
 export function createReduxStore(
   initialState?: StoreSchema,
   asyncReducers?: ReducersMapObject<StoreSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void,
+  // navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
   const reducers: ReducersMapObject<StoreSchema> = {
     ...asyncReducers,
@@ -27,7 +27,7 @@ export function createReduxStore(
 
   const extraArg: ThunkExtraArg = {
     api: api,
-    navigate,
+    // navigate,
   }
 
   // const store = configureStore<StoreSchema>({

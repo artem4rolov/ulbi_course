@@ -1,6 +1,5 @@
 import { StoreSchema } from 'app'
 import { getAuthUsername } from '../getAuthUsername'
-import { DeepPartial } from 'shared/types'
 
 describe('тест селектора для Auth Slice', () => {
   test('возврат username из слайса Auth', () => {

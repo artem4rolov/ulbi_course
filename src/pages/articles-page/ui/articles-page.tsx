@@ -18,11 +18,13 @@ import { useSelector } from 'react-redux'
 import {
   getArticlesPageErrors,
   getArticlesPageHasMore,
+  getArticlesPageInited,
   getArticlesPageIsLoading,
   getArticlesPageNumber,
   getArticlesPageView,
 } from '../model/selectors/articles-page.selectors'
 import { fetchNextArticlePage } from '../model/service/fetch-next-article-page'
+import { initArticlesPage } from '../model/service/init-articles-page'
 
 interface ArticlesPageProps {
   className?: string
@@ -40,7 +42,8 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const errors = useSelector(getArticlesPageErrors)
   const view = useSelector(getArticlesPageView)
   // const hasMore = useSelector(getArticlesPageHasMore)
-  const page = useSelector(getArticlesPageNumber)
+  // const inited = useSelector(getArticlesPageInited)
+  // const page = useSelector(getArticlesPageNumber)
   const dispatch = useAppDispatch()
 
   const onChangeView = useCallback((view: ArticleView) => {
@@ -52,8 +55,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch])
 
   useEffect(() => {
-    dispatch(articlePageActions.initState())
-    dispatch(fetchArticleList({ page }))
+    dispatch(initArticlesPage())
   }, [])
 
   if (errors) {

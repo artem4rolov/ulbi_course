@@ -1,6 +1,5 @@
 import { StoreSchema } from 'app'
 import { getAuthPassword } from '../getAuthPassword'
-import { DeepPartial } from 'shared/types'
 
 describe('тест селектора для Auth Slice', () => {
   test('возврат password из слайса Auth', () => {

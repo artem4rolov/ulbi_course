@@ -1,6 +1,4 @@
 import { StoreSchema } from 'app'
-import { DeepPartial } from 'shared/types'
-import { getProfileData } from '../get-profile-data'
 import { getProfileError } from '../get-profile-error'
 
 describe('тест селектора для Profile Slice', () => {

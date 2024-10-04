@@ -3,7 +3,6 @@ import { Provider } from 'react-redux'
 import { StoreSchema } from '../config'
 import { createReduxStore } from '../config/store'
 import { useNavigate } from 'react-router-dom'
-import { DeepPartial } from 'shared/types'
 import { ReducersMapObject } from '@reduxjs/toolkit'
 
 interface StoreProviderProps {
@@ -14,14 +13,16 @@ interface StoreProviderProps {
 
 export const StoreProvider: FC<StoreProviderProps> = (props) => {
   const { children, initialState, asyncReducers } = props
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const store = createReduxStore(
     initialState as StoreSchema,
     asyncReducers as ReducersMapObject<StoreSchema>,
     // прокидываем navigate в создание стора, чтобы можно было пользоваться навигацией в asyncThunk'ах
-    navigate,
+    // navigate,
   )
+
+  console.log('RENDER')
 
   return <Provider store={store}>{children}</Provider>
 }

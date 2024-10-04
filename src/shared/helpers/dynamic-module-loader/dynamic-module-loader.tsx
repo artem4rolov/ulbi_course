@@ -23,10 +23,17 @@ export const DynamicModuleLoader: FC<
   const dispatch = useDispatch()
 
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap()
+
     // при маунте асинхронного компонента, подтягиваем его редюсер
     Object.entries(reducers).forEach(([reducerKey, reducer]) => {
-      store.reducerManager.add(reducerKey as StateSchemaKey, reducer)
-      dispatch({ type: `add ${reducerKey} reducer` })
+      const mounted = mountedReducers[reducerKey as StateSchemaKey]
+
+      // если этот редюсер уже есть, то не монтируем его повторно
+      if (!mounted) {
+        store.reducerManager.add(reducerKey as StateSchemaKey, reducer)
+        dispatch({ type: `add ${reducerKey} reducer` })
+      }
     })
 
     return () => {

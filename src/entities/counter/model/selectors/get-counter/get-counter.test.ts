@@ -1,6 +1,5 @@
 import { StoreSchema } from 'app'
 import { getCounter } from './get-counter'
-import { DeepPartial } from 'shared/types'
 
 describe('тест селектора для Counter', () => {
   test('возврат стейта из слайса Counter', () => {
