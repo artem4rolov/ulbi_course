@@ -57,7 +57,9 @@ export const PageComponent = memo(
         className={classNames(classes['page-component'], {}, [className])}
       >
         {children}
-        <div ref={triggerRef} />
+        {onScrollEnd ? (
+          <div ref={triggerRef} className={classes['page-component-trigger']} />
+        ) : null}
       </section>
     )
   },

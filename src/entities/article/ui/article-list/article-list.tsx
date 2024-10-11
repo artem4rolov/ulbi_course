@@ -1,4 +1,4 @@
-import { classNames } from 'shared'
+import { classNames, Text } from 'shared'
 import { ArticleSchema, ArticleView } from '../../model/types/article.types'
 import { ArticleListItem } from '../article-list-item/article-list-item'
 import { ArticleListItemSkeleton } from '../article-list-item/article-list-item-skeleton'
@@ -37,6 +37,19 @@ export const ArticleList = ({
       className={classes['article-list-item']}
     />
   )
+
+  if (!articles.length && !isLoading) {
+    return (
+      <div
+        className={classNames(classes['article-list'], {}, [
+          className,
+          classes[view],
+        ])}
+      >
+        <Text text="Ничего не найдено" />
+      </div>
+    )
+  }
 
   return (
     <div

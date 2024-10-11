@@ -5,4 +5,10 @@
   padding: 20px 20px 20px 45px;
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
+
+  &-trigger {
+    /* нужны какие-нибудь стили, чтобы обзервер корректно регистрировал в области экрана этот элемент при скролле */
+    height: 20px;
+    margin: 10px;
+  }
 }

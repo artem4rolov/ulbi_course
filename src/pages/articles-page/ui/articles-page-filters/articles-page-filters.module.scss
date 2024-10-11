@@ -1,0 +1,15 @@
+.articles-page-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &-sort-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // &-search {
+  //   margin-top: 16px;
+  // }
+}

@@ -6,7 +6,7 @@ const ArticlesPageAsync = lazy(() => {
       res(null)
     }, 400)
   }).then(() => {
-    return import('./ui/articles-page')
+    return import('./ui/articles-page/articles-page')
   })
 })
 

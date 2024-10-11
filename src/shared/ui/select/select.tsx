@@ -3,27 +3,33 @@ import { classNames, Mods } from 'shared/helpers'
 import styles from './select.module.scss'
 import { ChangeEvent, memo, useMemo } from 'react'
 
-type SelectOption = {
-  value: string
+export type SelectOption<T extends string> = {
+  value: T
   content: string
 }
 
-interface ISelectProps {
+interface ISelectProps<T extends string> {
   className?: string
   label?: string
-  options?: SelectOption[]
-  value?: string
-  onChange?: (value: string) => void
+  options?: SelectOption<T>[]
+  value?: T
+  onChange?: (value: T) => void
   readonly?: boolean
 }
 
-export const Select = memo((props: ISelectProps) => {
+export const Select = <T extends string>(props: ISelectProps<T>) => {
   const { className, label, onChange, options, value, readonly } = props
   const mods: Mods = {}
 
+  console.log(options)
+
   const optionsList = useMemo(() => {
     return options?.map((opt) => (
-      <option key={opt.value} className={styles['select-option']}>
+      <option
+        key={opt.value}
+        className={styles['select-option']}
+        value={opt.value}
+      >
         {opt.content}
       </option>
     ))
@@ -31,7 +37,7 @@ export const Select = memo((props: ISelectProps) => {
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     if (onChange && e.target.value) {
-      onChange(e.target.value)
+      onChange(e.target.value as T)
     }
   }
 
@@ -50,4 +56,4 @@ export const Select = memo((props: ISelectProps) => {
       </select>
     </div>
   )
-})
+}
