@@ -44,9 +44,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading)
   const errors = useSelector(getArticlesPageErrors)
   const view = useSelector(getArticlesPageView)
-  // const hasMore = useSelector(getArticlesPageHasMore)
-  // const inited = useSelector(getArticlesPageInited)
-  // const page = useSelector(getArticlesPageNumber)
+
   const dispatch = useAppDispatch()
 
   const [searchParams] = useSearchParams()
@@ -70,10 +68,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         onScrollEnd={onLoadNextPart}
       >
         <ArticlesPageFilters />
-        {/* <ArticleViewSelector
-          view={view ?? ArticleView.BIG}
-          onViewClick={onChangeView}
-        /> */}
         <ArticleList
           isLoading={isLoading}
           articles={articles}

@@ -85,9 +85,11 @@ const ArticlesPageFilters = ({ className }: ArticlesPageFiltersProps) => {
     (newType: string) => {
       dispatch(articlePageActions.setType(newType as ArticleType))
       dispatch(articlePageActions.setPage(1))
-      debouncedFetchData()
+      // debouncedFetchData()
+      // при изменении типа статьи, debounce не требуется
+      fetchData()
     },
-    [dispatch, debouncedFetchData],
+    [dispatch, fetchData],
   )
 
   return (
