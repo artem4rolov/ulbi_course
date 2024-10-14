@@ -1,13 +1,14 @@
 import { Reducer } from '@reduxjs/toolkit'
 import {
   ReduxStoreWithManager,
+  StateSchema,
   StateSchemaKey,
 } from 'app/providers/store-provider/config/state-schema.types'
 import { FC, PropsWithChildren, useEffect } from 'react'
 import { useDispatch, useStore } from 'react-redux'
 
 export type ReducersList = {
-  [name in StateSchemaKey]: Reducer
+  [name in StateSchemaKey]: Reducer<NonNullable<StateSchema[name]>>
 }
 interface IDynamicModuleLoaderProps {
   reducers: Partial<ReducersList>

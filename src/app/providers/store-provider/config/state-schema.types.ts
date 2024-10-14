@@ -13,9 +13,8 @@ import { UserSchema } from 'entities/user'
 import { AddCommentFormSchema } from 'features/add-comment-form'
 import { AuthSchema } from 'features/auth-by-username'
 import { UISaveScrollSchema } from 'features/ui-save-scroll'
-import { ArticleDetailsCommentSchema } from 'pages/article-details-page'
+import { ArticleDetailsPageSchema } from 'pages/article-details-page/model/types'
 import { ArticlesPageSchema } from 'pages/articles-page'
-import { NavigateOptions, To } from 'react-router-dom'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -26,9 +25,9 @@ export interface StateSchema {
   auth?: AuthSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
-  articleDetailsComments?: ArticleDetailsCommentSchema
   addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlesPageSchema
+  articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

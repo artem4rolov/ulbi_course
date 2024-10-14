@@ -5,6 +5,8 @@ import {
   ArticleView,
 } from '../../model/types/article.types'
 import {
+  AppLink,
+  AppLinkTheme,
   Avatar,
   Button,
   CardComponent,
@@ -79,12 +81,17 @@ export const ArticleListItem = ({
             />
           )}
           <div className={classes['article-list-item-footer']}>
-            <Button
-              theme={ButtonTheme.OUTLINE_INVERTED}
-              onClick={onOpenArticle}
+            <AppLink
+              theme={AppLinkTheme.USTYLED}
+              to={`${RouterPaths.article_details}${article.id}`}
             >
-              Читать далее...
-            </Button>
+              <Button
+                theme={ButtonTheme.OUTLINE_INVERTED}
+                onClick={onOpenArticle}
+              >
+                Читать далее...
+              </Button>
+            </AppLink>
             <div className={classes['article-list-item-footer-views']}>
               <Text text={String(article.views)} />
               <IconComponent Svg={ViewsIcon} />
@@ -96,6 +103,9 @@ export const ArticleListItem = ({
   }
 
   return (
+    // @todo проверить стили для ссылки
+    // <AppLink theme={AppLinkTheme.USTYLED}
+    // to={`${RouterPaths.article_details}${article.id}`}
     <div
       {...bindHover}
       className={classNames(classes['article-list-item'], {}, [
