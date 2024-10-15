@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { ArticleDetails, ArticleList } from 'entities/article'
@@ -7,11 +7,9 @@ import { CommentList } from 'entities/comment'
 import { getArticleComments } from '../model/slices/article-details-comments-slice'
 
 import {
-  Button,
   classNames,
   DynamicModuleLoader,
   ReducersList,
-  RouterPaths,
   Text,
   TextSize,
   useAppDispatch,
@@ -26,7 +24,6 @@ import {
 import { fetchCommenteById } from '../model/services/fetchCommentsById'
 import { AddCommentForm } from 'features/add-comment-form'
 import { addCommentForArticle } from './../model/services/add-comment-for-article'
-import { ButtonTheme } from 'shared/ui/button/button.types'
 import { PageComponent } from 'widgets'
 import { getArticleRecomendations } from '../model/slices/article-details-page-recomendations-slice'
 import {
@@ -35,6 +32,7 @@ import {
 } from '../model/selectors/recomendations-selector'
 import { fetchArticleRecomendations } from '../model/services/fetch-article-recomendations'
 import { articleDetailsPageReducer } from '../model/slices'
+import ArticleDetailsPageHeader from './article-details-page-header/article-details-page-header'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -52,7 +50,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>()
   const { className } = props
 
-  const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
   const comments = useSelector(getArticleComments.selectAll)
@@ -76,10 +73,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     [dispatch],
   )
 
-  const onBackToListArticle = useCallback(() => {
-    navigate(`${RouterPaths.articles}`)
-  }, [navigate])
-
   if (!id) {
     return (
       <PageComponent className={styles.articleDetailsPage}>
@@ -93,12 +86,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
       <PageComponent
         className={classNames(styles['article-details-page'], {}, [className])}
       >
-        <Button
-          theme={ButtonTheme.OUTLINE_INVERTED}
-          onClick={onBackToListArticle}
-        >
-          Назад к списку статей
-        </Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text
           className={styles['article-details-page-comments-title']}
