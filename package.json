@@ -98,12 +98,14 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
+    "@types/react-virtualized": "^9.21.30",
     "axios": "^1.7.2",
     "concurrently": "^9.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "^7.2.6",
-    "react-router-dom": "6.2.1"
+    "react-router-dom": "6.2.1",
+    "react-virtualized": "^9.22.5"
   },
   "loki": {
     "configurations": {

@@ -15,7 +15,12 @@
   gap: 30px;
 
   .article-list-item {
-    // margin-left: 30px;
-    // margin-bottom: 30px;
+    display: inline-flex;
+    height: 300px;
+  }
+
+  .article-list-row {
+    display: flex;
+    gap: 30px;
   }
 }

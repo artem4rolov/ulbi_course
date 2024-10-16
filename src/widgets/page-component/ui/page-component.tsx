@@ -10,7 +10,12 @@ import {
 } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-import { useAppDispatch, useInfiniteScroll, useThrottle } from 'shared'
+import {
+  PAGE_COMPONENT_ID,
+  useAppDispatch,
+  useInfiniteScroll,
+  useThrottle,
+} from 'shared'
 import { classNames } from 'shared/helpers'
 
 import classes from './page-component.module.scss'
@@ -52,6 +57,7 @@ export const PageComponent = memo(
 
     return (
       <section
+        id={PAGE_COMPONENT_ID}
         ref={wrapperRef}
         onScroll={onScrollHandler}
         className={classNames(classes['page-component'], {}, [className])}
