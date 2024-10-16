@@ -5,6 +5,8 @@ export type PathsType = {
   output: string
   html: string
   src: string
+  locales: string
+  buildLocales: string
 }
 
 export type EnvTypes = {

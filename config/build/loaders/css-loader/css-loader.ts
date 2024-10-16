@@ -25,7 +25,16 @@ export const cssLoader = (isDev: boolean) => {
         },
       },
       // Compiles Sass to CSS
-      'sass-loader',
+      // 'sass-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          api: 'modern',
+          sassOptions: {
+            // Your sass options
+          },
+        },
+      },
     ],
   }
 }

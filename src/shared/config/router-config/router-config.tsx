@@ -6,8 +6,8 @@ import {
 import { NotFoundPage } from 'pages/not-found-page'
 import { ArticlesPage } from 'pages/articles-page'
 import { ArticleDetailsPage } from 'pages/article-details-page'
+import { ArticlesEditPage } from 'pages/article-edit-page'
 import { type RouteProps } from 'react-router'
-import ArticleEditPage from 'pages/article-edit-page/ui/article-edit-page'
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean
@@ -61,12 +61,12 @@ export const routerConfig: Record<RouterNames, AppRoutesProps> = {
   },
   [RouterNames.ARTICLE_EDIT]: {
     path: `${RouterPaths.article_edit}`,
-    element: <ArticleEditPage />,
+    element: <ArticlesEditPage />,
     authOnly: true,
   },
   [RouterNames.ARTICLE_CREATE]: {
     path: `${RouterPaths.article_create}`,
-    element: <ArticleEditPage />,
+    element: <ArticlesEditPage />,
     authOnly: true,
   },
   // not-found

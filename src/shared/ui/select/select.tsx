@@ -21,8 +21,6 @@ export const Select = <T extends string>(props: ISelectProps<T>) => {
   const { className, label, onChange, options, value, readonly } = props
   const mods: Mods = {}
 
-  console.log(options)
-
   const optionsList = useMemo(() => {
     return options?.map((opt) => (
       <option

@@ -7,6 +7,7 @@ import {
   type WebpackPluginInstance,
 } from 'webpack'
 import { type BuildOptions } from './types'
+import CopyPlugin from 'copy-webpack-plugin'
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
   const plugins = [
@@ -19,6 +20,11 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
       __IS_DEV__: JSON.parse(JSON.stringify(options.isDev)),
       __API_URL__: JSON.stringify(options.apiUrl),
       __PROJECT__: JSON.stringify(options.project),
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: options.paths.locales, to: options.paths.buildLocales },
+      ],
     }),
   ]
 

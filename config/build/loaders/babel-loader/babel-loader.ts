@@ -1,6 +1,4 @@
 export const buildBabelLoader = (isDev: boolean) => {
-  console.log(isDev)
-
   return {
     test: /\.(ts|jsx|tsx)$/,
     exclude: /node_modules/,
@@ -9,14 +7,14 @@ export const buildBabelLoader = (isDev: boolean) => {
       options: {
         presets: ['@babel/preset-env'],
         plugins: [
-          [
-            'i18next-extract',
-            {
-              locales: ['en', 'ru'],
-              // keyAsDefaultValue: true,
-            },
-            isDev && require.resolve('react-refresh/babel'),
-          ],
+          // [
+          //   'i18next-extract',
+          //   {
+          //     locales: ['en', 'ru'],
+          //     // keyAsDefaultValue: true,
+          //   },
+          // ],
+          // isDev && require.resolve('react-refresh/babel'),
         ].filter(Boolean),
       },
     },

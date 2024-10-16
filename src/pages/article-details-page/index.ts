@@ -1,14 +1,6 @@
 import { lazy } from 'react'
 
-const ArticleDetailsPageAsync = lazy(() => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(null)
-    }, 400)
-  }).then(() => {
-    return import('./ui/article-details-page')
-  })
-})
+const ArticleDetailsPageAsync = lazy(() => import('./ui/article-details-page'))
 
 export { ArticleDetailsPageAsync as ArticleDetailsPage }
 
