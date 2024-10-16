@@ -6,6 +6,17 @@ import { LOCAL_STORAGE_USER_KEY } from 'shared/constants'
 export const api = axios.create({
   baseURL: String(__API_URL__),
   headers: {
-    authorization: localStorage.getItem(LOCAL_STORAGE_USER_KEY),
+    // если оставить без interceptor, то после авторизации, в инстансе
+    // axios в заголовке authorization будет пустая строка
+    // authorization: localStorage.getItem(LOCAL_STORAGE_USER_KEY) || '',
   },
+})
+
+api.interceptors.request.use((config) => {
+  if (config.headers) {
+    config.headers.Authorization =
+      localStorage.getItem(LOCAL_STORAGE_USER_KEY) || ''
+  }
+
+  return config
 })
