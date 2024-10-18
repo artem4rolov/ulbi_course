@@ -33,6 +33,16 @@
   }
 }
 
+.size_s {
+  .text-title {
+    font: var(--font-m);
+  }
+
+  .text-text {
+    font: var(--font-s);
+  }
+}
+
 .size_l {
   .text-title {
     font: var(--font-xl);

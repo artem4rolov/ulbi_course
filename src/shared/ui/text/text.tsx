@@ -18,8 +18,19 @@ export enum TextAlign {
 }
 
 export enum TextSize {
+  S = 'size_s',
   M = 'size_m',
   L = 'size_l',
+  // XL = 'size_xl',
+}
+
+export type HeaderTag = 'h1' | 'h2' | 'h3'
+
+// улучшаем семантику
+const mapSizeHeaderTag: Record<TextSize, HeaderTag> = {
+  [TextSize.S]: 'h3',
+  [TextSize.M]: 'h2',
+  [TextSize.L]: 'h1',
 }
 
 export const Text: FC<ITextProps> = ({
@@ -36,6 +47,8 @@ export const Text: FC<ITextProps> = ({
     [styles[size]]: true,
   }
 
+  const HeaderTag = mapSizeHeaderTag[size]
+
   return (
     <div
       className={classNames(styles['text-wrapper'], mods, [
@@ -43,7 +56,7 @@ export const Text: FC<ITextProps> = ({
         variant && styles[variant],
       ])}
     >
-      {title && <p className={styles['text-title']}>{title}</p>}
+      {title && <HeaderTag className={styles['text-title']}>{title}</HeaderTag>}
       {text && <p className={styles['text-text']}>{text}</p>}
     </div>
   )
