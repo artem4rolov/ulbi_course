@@ -11,6 +11,7 @@ import {
 } from 'entities/profile'
 import { useCallback } from 'react'
 import { getAuthData } from 'entities/user'
+import { HStack, VStack } from 'shared/ui/stack'
 
 interface ProfilePageHeaderProps {}
 
@@ -37,38 +38,26 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   }, [])
 
   return (
-    <div className={styles['profile-page-header']}>
+    <HStack justify="between" className={styles['profile-page-header']}>
       <Text text={t('Профиль')} />
       {canEditUserData && (
-        <div className={styles['profile-page-header-btn-wrapper']}>
+        <HStack justify="end">
           {readOnly ? (
-            <Button
-              className={styles['profile-page-header-edit-button']}
-              theme={ButtonTheme.OUTLINE_INVERTED}
-              onClick={onEdit}
-            >
+            <Button theme={ButtonTheme.OUTLINE_INVERTED} onClick={onEdit}>
               {t('Редактировать')}
             </Button>
           ) : (
-            <div className={styles['profile-page-header-buttons']}>
-              <Button
-                className={styles['profile-page-header-edit-button']}
-                theme={ButtonTheme.OUTLINE_RED}
-                onClick={onEditCancel}
-              >
+            <HStack gap="4" justify="end">
+              <Button theme={ButtonTheme.OUTLINE_RED} onClick={onEditCancel}>
                 {t('Отменить')}
               </Button>
-              <Button
-                className={styles['profile-page-header-edit-button']}
-                theme={ButtonTheme.OUTLINE_INVERTED}
-                onClick={onSave}
-              >
+              <Button theme={ButtonTheme.OUTLINE_INVERTED} onClick={onSave}>
                 {t('Сохранить')}
               </Button>
-            </div>
+            </HStack>
           )}
-        </div>
+        </HStack>
       )}
-    </div>
+    </HStack>
   )
 }

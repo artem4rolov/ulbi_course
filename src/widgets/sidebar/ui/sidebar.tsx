@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { Button, classNames, LangSwitcher, ThemeSwitcher } from 'shared'
 
 import { ButtonSize, ButtonTheme } from 'shared/ui/button/button.types'
+import { VStack } from 'shared/ui/stack'
 import { getSidebarItems } from '../model/selectors/get-sidebar-items'
 import { SidebarItem } from './sidebar-item/sidebar-item'
 
@@ -34,9 +35,11 @@ export const Sidebar = memo((props: SidebarProps) => {
             : styles['sidebar-links-collapsed']
         }
       >
-        {sidebarItemsList.map((link) => (
-          <SidebarItem key={link.route} item={link} collapsed={collapsed} />
-        ))}
+        <VStack gap="8" align="start">
+          {sidebarItemsList.map((link) => (
+            <SidebarItem key={link.route} item={link} collapsed={collapsed} />
+          ))}
+        </VStack>
       </div>
       <div
         className={

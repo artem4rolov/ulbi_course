@@ -1,20 +1,5 @@
 .profile-page {
   &-header {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
-
-    &-btn-wrapper {
-      margin-left: auto;
-    }
-
-    &-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    &-edit-button {
-      margin-left: auto;
-    }
   }
 }

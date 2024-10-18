@@ -18,6 +18,8 @@ import { ProfilePageHeader } from './profile-page-header/profile-page-header'
 import { Currency } from 'entities/currency'
 import { Country } from 'entities/country'
 import { useParams } from 'react-router-dom'
+import { VStack } from 'shared/ui/stack'
+import { PageComponent } from 'widgets'
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -102,19 +104,19 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <ProfilePageHeader />
-      {profileValidateErrors.length ? (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {profileValidateErrors.map((error) => (
-            <Text
-              key={error}
-              variant="error"
-              text={validateErrorsTraslates[error]}
-            />
-          ))}
-        </div>
-      ) : null}
-      <div>
+      <PageComponent>
+        <ProfilePageHeader />
+        {profileValidateErrors.length ? (
+          <VStack>
+            {profileValidateErrors.map((error) => (
+              <Text
+                key={error}
+                variant="error"
+                text={validateErrorsTraslates[error]}
+              />
+            ))}
+          </VStack>
+        ) : null}
         <ProfileCard
           data={profileForm}
           isLoading={isProfileLoading}
@@ -129,7 +131,7 @@ const ProfilePage = () => {
           onChangeCurrency={onChangeCurrency}
           readonly={readOnly}
         />
-      </div>
+      </PageComponent>
     </DynamicModuleLoader>
   )
 }
