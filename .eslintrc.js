@@ -50,7 +50,7 @@ module.exports = {
     },
     project: './tsconfig.json',
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'fsd-plugin-ulbi'],
   rules: {
     'prettier/prettier': [
       'warn',
@@ -68,6 +68,7 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     'react-hooks/exhaustive-deps': 'warn',
     'prefer-const': 'warn',
+    'fsd-plugin-ulbi/path-checker': 'warn',
   },
   ignorePatterns: ['./src/index.tsx'],
   // global: {

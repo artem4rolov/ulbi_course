@@ -26,7 +26,7 @@ import {
 
 import classes from './articles-page-filters.module.scss'
 import { SortOrder } from 'shared/types'
-import { fetchArticleList } from 'pages/articles-page/model/service/fetch-article-list'
+import { fetchArticleList } from '../../model/service/fetch-article-list'
 import { useDebounce } from 'shared/hooks/use-debounce'
 import { TabItem, TabsList } from 'shared/ui/tabs-list/tabs-list'
 

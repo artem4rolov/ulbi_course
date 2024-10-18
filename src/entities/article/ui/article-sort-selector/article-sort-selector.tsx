@@ -1,4 +1,4 @@
-import { ArticleSortField } from 'entities/article/model/types/article.types'
+import { ArticleSortField } from '../../model/types/article.types'
 import { useMemo } from 'react'
 import { Select, SelectOption } from 'shared'
 import { SortOrder } from 'shared/types'

@@ -3,7 +3,7 @@ import { waitFor } from '@testing-library/react'
 import { validateProfile } from '../validate-profile'
 import { Country } from 'entities/country'
 import { Currency } from 'entities/currency'
-import { ValidateProfileError } from 'entities/profile/model/type/profile'
+import { ValidateProfileError } from '../../model/type/profile'
 
 describe('тест helper валидация обновления профиля', () => {
   test('проверка коррекнтых введенных данных для обновления профиля', async () => {

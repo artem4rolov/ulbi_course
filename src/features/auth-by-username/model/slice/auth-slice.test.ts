@@ -1,6 +1,6 @@
 import { authByUserNameActions, authByUserNameReducer } from './auth-slice'
 import { AuthSchema } from '../types/auth.types'
-import { loginByUserName } from 'features/auth-by-username/services/auth-service'
+import { loginByUserName } from '../../services/auth-service'
 
 describe('тест селекторов для слайса authByUserName', () => {
   test('изменение username', () => {

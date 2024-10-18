@@ -3,8 +3,8 @@ import { render } from '@testing-library/react'
 import { I18nextProvider } from 'react-i18next'
 import { is18nForTests } from 'shared/config/i18n/i18nForTests'
 import { MemoryRouter } from 'react-router-dom'
-import { StoreProvider } from 'app/providers/store-provider'
-import { StateSchema } from 'app/providers/store-provider/config'
+import { StoreProvider } from '../../store-provider/ui/store-provider'
+import { StateSchema } from '../../store-provider/config'
 
 interface TestWithTranslationAndRouterProps {
   route?: string

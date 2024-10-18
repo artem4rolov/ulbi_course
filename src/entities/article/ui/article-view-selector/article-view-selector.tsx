@@ -1,4 +1,4 @@
-import { ArticleView } from 'entities/article/model/types/article.types'
+import { ArticleView } from '../../model/types/article.types'
 import { useCallback } from 'react'
 import { Button, classNames, IconComponent } from 'shared'
 import ListIcon from 'shared/assets/icons/list.svg'

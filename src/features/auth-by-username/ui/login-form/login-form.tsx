@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next'
 import {
   authByUserNameActions,
   authByUserNameReducer,
-} from 'features/auth-by-username/model/slice/auth-slice'
-import { loginByUserName } from 'features/auth-by-username/services/auth-service'
+} from '../../model/slice/auth-slice'
+import { loginByUserName } from '../../services/auth-service'
 import { ButtonSize, ButtonTheme } from 'shared/ui/button/button.types'
 import { Text } from 'shared/ui/text'
 import {
