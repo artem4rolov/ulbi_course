@@ -38,3 +38,23 @@
 .top {
   bottom: 100%;
 }
+
+.bottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.bottomRight {
+  top: 100%;
+  left: 0; 
+}
+
+.topRight {
+  bottom: 100%;
+  left: 0;
+}
+
+.topLeft {
+  bottom: 100%;
+  right: 0;
+}

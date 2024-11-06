@@ -4,13 +4,14 @@ import { useTranslation } from 'react-i18next'
 import { ButtonTheme } from 'shared/ui/button/button.types'
 import { classNames } from 'shared/helpers'
 
-import { AppLink, AppLinkTheme, Button } from 'shared/ui'
+import { AppLink, AppLinkTheme, Avatar, Button, Dropdown } from 'shared/ui'
 
 import styles from './navbar.module.scss'
 import { LoginModal } from 'features'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAuthData, userActions } from 'entities/user'
 import { RouterPaths } from 'shared'
+import { useNavigate } from 'react-router-dom'
 interface NavbarProps {
   className?: string
 }
@@ -18,6 +19,7 @@ interface NavbarProps {
 export const Navbar = memo((props: NavbarProps) => {
   const { className } = props
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const { t } = useTranslation('translation')
 
   const authData = useSelector(getAuthData)
@@ -53,9 +55,21 @@ export const Navbar = memo((props: NavbarProps) => {
         </AppLink>
       </div>
       <div className={classNames(styles['navbar-links'])}>
-        <Button theme={ButtonTheme.LINK} onClick={onLogout}>
-          {t('logoutButton')}
-        </Button>
+        <Dropdown
+          className={styles['navbar-dropdown']}
+          items={[
+            {
+              content: t('Выйти'),
+              onClick: onLogout,
+            },
+            {
+              onClick: () => navigate(RouterPaths.profile + authData.id),
+              content: 'Профиль',
+            },
+          ]}
+          trigger={<Avatar src={authData.avatar} size={40} />}
+          direction="bottom left"
+        />
       </div>
     </header>
   )

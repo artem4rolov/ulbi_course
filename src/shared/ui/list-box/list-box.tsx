@@ -5,8 +5,8 @@ import { classNames } from 'shared/helpers'
 import { Button } from '../button'
 import { ButtonTheme } from '../button/button.types'
 import { HStack } from '../stack'
+import { DropDownDirection } from 'shared/types/ui-types'
 
-type DropDownDirection = 'top' | 'bottom'
 export interface ListBoxItem {
   value: string
   content: ReactNode
@@ -24,6 +24,15 @@ interface ListBoxProps {
   label?: string
 }
 
+const mapDirectionClass: Record<DropDownDirection, string> = {
+  top: classes.top,
+  bottom: classes.bottom,
+  'bottom left': classes.bottomLeft,
+  'bottom right': classes.bottomRight,
+  'top right': classes.topRight,
+  'top left': classes.topLeft,
+}
+
 export const Listbox = (props: ListBoxProps) => {
   const {
     className,
@@ -36,7 +45,7 @@ export const Listbox = (props: ListBoxProps) => {
     label,
   } = props
 
-  const optionalClasses = [classes[direction]]
+  const optionalClasses = [mapDirectionClass[direction]]
 
   return (
     <HStack>
