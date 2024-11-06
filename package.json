@@ -20,7 +20,8 @@
     "build-storybook": "storybook build -c config/storybook",
     "typecheck": "tsc --skipLibCheck",
     "prepare": "husky install",
-    "prettier": "prettier \"src/**/*.{ts,tsx,css,scss}\" --write"
+    "prettier": "prettier \"src/**/*.{ts,tsx,css,scss}\" --write",
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "author": "",
   "license": "ISC",
